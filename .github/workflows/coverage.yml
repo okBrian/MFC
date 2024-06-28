@@ -24,9 +24,6 @@ jobs:
     needs: file-changes
     runs-on: "ubuntu-latest"
     steps:
-      - name: Checkouts
-        uses: actions/checkout@v4
-
       - name: Setup Ubuntu
         run: |
             sudo apt update -y
