@@ -1,4 +1,4 @@
-name: Path Filter
+name: 'Path Filter'
 
 on: [push, pull_request, workflow_dispatch]
 
