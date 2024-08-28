@@ -9,7 +9,7 @@ on:
 jobs:
   github:
     name: Github
-    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.outputs.checkall == 'true'
+    if: github.event.workflow_run.conclusion == 'success'
     strategy:
       matrix:
         os:    ['ubuntu', 'macos']
