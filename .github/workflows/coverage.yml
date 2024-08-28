@@ -10,7 +10,7 @@ on:
 jobs:
   run:
     name: Coverage Test on CodeCov
-    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.outputs.checkall == 'true'
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: "ubuntu-latest"
     steps:
       - name: Checkouts
