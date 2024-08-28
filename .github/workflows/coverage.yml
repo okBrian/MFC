@@ -1,27 +1,15 @@
 name: Coverage Check
 
-on: [push, pull_request, workflow_dispatch]
+on: 
+  workflow_run:
+    workflows: ["path_filter.yml"]
+    types: 
+      - completed
 
 jobs:
-  file-changes:
-    name: Detect File Changes
-    runs-on: 'ubuntu-latest'
-    outputs: 
-      checkall: ${{ steps.changes.outputs.checkall }}
-    steps:
-      - name: Clone
-        uses: actions/checkout@v4
-
-      - name: Detect Changes
-        uses: dorny/paths-filter@v3
-        id: changes
-        with: 
-          filters: ".github/file-filter.yml"
-
   run:
     name: Coverage Test on CodeCov
-    if: needs.file-changes.outputs.checkall == 'true'
-    needs: file-changes
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.outputs.checkall == 'true'
     runs-on: "ubuntu-latest"
     steps:
       - name: Checkouts

@@ -1,26 +1,16 @@
 name: 'Benchmark'
 
-on: pull_request
+on: 
+  pull_request:
+  workflow_run:
+    workflows: ["path_filter.yml"]
+    types: 
+      - completed
 
 jobs:
-  file-changes:
-    name: Detect File Changes
-    runs-on: 'ubuntu-latest'
-    outputs: 
-      checkall: ${{ steps.changes.outputs.checkall }}
-    steps:
-      - name: Clone
-        uses: actions/checkout@v4
-
-      - name: Detect Changes
-        uses: dorny/paths-filter@v3
-        id: changes
-        with: 
-          filters: ".github/file-filter.yml"
-
   self:
     name: Georgia Tech | Phoenix (NVHPC)
-    if: github.repository == 'MFlowCode/MFC'
+    if: github.repository == 'MFlowCode/MFC' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.outputs.checkall == 'true' && github.event.pull_request == 'true'
     strategy:
       matrix:
         device: ['cpu', 'gpu']
