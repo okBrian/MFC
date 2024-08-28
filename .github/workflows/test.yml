@@ -3,7 +3,7 @@ name: 'Test Suite'
 on: 
   workflow_dispatch:
   workflow_run:
-    workflows: ['Path Filter']
+    workflows: [PathFilter]
     types: [completed]
     
 jobs:
