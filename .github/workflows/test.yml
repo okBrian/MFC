@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows: [Path Filter]
-    types: 
-      - completed
+    types: [completed]
     
 jobs:
   github:
