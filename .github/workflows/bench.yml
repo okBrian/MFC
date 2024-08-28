@@ -3,7 +3,7 @@ name: 'Benchmark'
 on: 
   pull_request:
   workflow_run:
-    workflows: ["path_filter.yml"]
+    workflows: ["Path Filter"]
     types: 
       - completed
 
