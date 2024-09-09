@@ -36,8 +36,8 @@ jobs:
               run: |
                 grep -F 'Wunused-variable' master.txt -B 4 >> mUnused.txt
                 grep -F 'Wunused-variable' pr.txt -B 4 >> prUnused.txt
-                diff mUnused.txt prUnused.txt | grep "^<\|^>" | sed 's/^< //' | sed 's/^> //' > uncommon_lines.txt
-                awk 'NR==FNR{a[NR]=$0; next} {if ($0 in a) for (i=NR-4; i<NR; i++) if (i>0) print a[i]; print $0}' uncommon_lines.txt prUnused.txt
+                grep -v -f mUnused.txt prUnused.txt 
+
 
             
             - name: Unused Dummy Arguments Diff

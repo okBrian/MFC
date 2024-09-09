@@ -1,0 +1,1956 @@
+/home/bok/dev/MFC/src/common/m_eigen_solver.f90:355:49:
+
+  355 |                            norm, tst1, tst2, c, d
+      |                                                 1
+Warning: Unused variable ‘d’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_eigen_solver.f90:229:52:
+
+  229 |         real(kind(0d0)) :: f, g, h, fi, fr, scale, c
+      |                                                    1
+Warning: Unused variable ‘c’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:29:
+
+   81 |         integer :: i, j, q, k, l
+      |                             1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:32:
+
+   81 |         integer :: i, j, q, k, l
+      |                                1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:26:
+
+   81 |         integer :: i, j, q, k, l
+      |                          1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_helper.fpp:464:46:
+
+  464 |         real(kind(0d0)), dimension(1:4) :: tmp
+      |                                              1
+Warning: Unused variable ‘tmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_helper.fpp:301:40:
+
+  301 |         real(kind(0.d0)) :: f_transcoeff
+      |                                        1
+Warning: Unused variable ‘f_transcoeff’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/pre_process/m_model.fpp:504:34:
+
+  504 |         real(kind(0d0)) :: v0v1(3), v0v2(3), N(3), P(3), C(3), edge(3), vp(3)
+      |                                  1
+Warning: Unused variable ‘v0v1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_model.fpp:504:43:
+
+  504 |         real(kind(0d0)) :: v0v1(3), v0v2(3), N(3), P(3), C(3), edge(3), vp(3)
+      |                                           1
+Warning: Unused variable ‘v0v2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_model.fpp:32:23:
+
+   32 |         integer :: i, j, iunit, iostat
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1208:57:
+
+ 1208 |         real(kind(0d0)), dimension(num_fluids) :: alpha_K
+      |                                                         1
+Warning: Unused variable ‘alpha_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1207:61:
+
+ 1207 |         real(kind(0d0)), dimension(num_fluids) :: alpha_rho_K
+      |                                                             1
+Warning: Unused variable ‘alpha_rho_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1213:30:
+
+ 1213 |         real(kind(0d0)) :: E_K
+      |                              1
+Warning: Unused variable ‘e_k’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1218:30:
+
+ 1218 |         real(kind(0d0)) :: G_K
+      |                              1
+Warning: Unused variable ‘g_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1214:34:
+
+ 1214 |         real(kind(0d0)) :: gamma_K
+      |                                  1
+Warning: Unused variable ‘gamma_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1220:20:
+
+ 1220 |         integer :: i, j, k, l !< Generic loop iterators
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1220:23:
+
+ 1220 |         integer :: i, j, k, l !< Generic loop iterators
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1220:26:
+
+ 1220 |         integer :: i, j, k, l !< Generic loop iterators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1220:29:
+
+ 1220 |         integer :: i, j, k, l !< Generic loop iterators
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1215:35:
+
+ 1215 |         real(kind(0d0)) :: pi_inf_K
+      |                                   1
+Warning: Unused variable ‘pi_inf_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1212:33:
+
+ 1212 |         real(kind(0d0)) :: pres_K
+      |                                 1
+Warning: Unused variable ‘pres_k’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1216:31:
+
+ 1216 |         real(kind(0d0)) :: qv_K
+      |                               1
+Warning: Unused variable ‘qv_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1217:45:
+
+ 1217 |         real(kind(0d0)), dimension(2) :: Re_K
+      |                                             1
+Warning: Unused variable ‘re_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1209:32:
+
+ 1209 |         real(kind(0d0)) :: rho_K
+      |                                1
+Warning: Unused variable ‘rho_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1210:53:
+
+ 1210 |         real(kind(0d0)), dimension(num_dims) :: vel_K
+      |                                                     1
+Warning: Unused variable ‘vel_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1211:36:
+
+ 1211 |         real(kind(0d0)) :: vel_K_sum
+      |                                    1
+Warning: Unused variable ‘vel_k_sum’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1055:32:
+
+ 1055 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1050:35:
+
+ 1050 |         real(kind(0d0)) :: nbub, R3, vftmp, R3tmp
+      |                                   1
+Warning: Unused variable ‘r3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1050:42:
+
+ 1050 |         real(kind(0d0)) :: nbub, R3, vftmp, R3tmp
+      |                                          1
+Warning: Unused variable ‘vftmp’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:859:37:
+
+  859 |         real(kind(0d0)) :: vftmp, nR3, nbub_sc, R3tmp
+      |                                     1
+Warning: Unused variable ‘nr3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:867:32:
+
+  867 |         real(kind(0.d0)) :: ntmp
+      |                                1
+Warning: Unused variable ‘ntmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:865:32:
+
+  865 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:859:53:
+
+  859 |         real(kind(0d0)) :: vftmp, nR3, nbub_sc, R3tmp
+      |                                                     1
+Warning: Unused variable ‘r3tmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:635:23:
+
+  635 |         @:ALLOCATE_GLOBAL(qvps    (1:num_fluids))
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:579:20:
+
+  579 |             if (num_fluids == 1) then ! need to consider case with num_fluids >= 2
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:579:23:
+
+  579 |             if (num_fluids == 1) then ! need to consider case with num_fluids >= 2
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:501:38:
+
+  501 |         end do
+      |                                      1
+Warning: Unused variable ‘alpha_k_sum’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:500:20:
+
+  500 |             qv_K = qv_K + alpha_rho_K(i)*qvs(i)
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:500:23:
+
+  500 |             qv_K = qv_K + alpha_rho_K(i)*qvs(i)
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:412:23:
+
+  412 |             qv = qv + alpha_rho_K(i)*qvs(i)
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:285:23:
+
+  285 |             qv = fluid_pp(1)%qv
+      |                       1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/pre_process/m_perturbation.fpp:296:20:
+
+  296 |         integer :: i, j, k, l !<  generic loop iterators
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_perturbation.fpp:296:29:
+
+  296 |         integer :: i, j, k, l !<  generic loop iterators
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_perturbation.fpp:235:20:
+
+  235 |         integer :: i, j !<  generic loop iterators
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_perturbation.fpp:185:25:
+
+  185 |         integer :: ii, jj
+      |                         1
+Warning: Unused variable ‘jj’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_perturbation.fpp:87:29:
+
+   87 |         integer :: i, j, k, l !<  generic loop iterators
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_perturbation.fpp:58:38:
+
+   58 |         real(kind(0d0)) :: alpha_unadv
+      |                                      1
+Warning: Unused variable ‘alpha_unadv’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:283:40:
+
+  283 |         real(kind(0d0)) :: epsilon, beta
+      |                                        1
+Warning: Unused variable ‘beta’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:283:34:
+
+  283 |         real(kind(0d0)) :: epsilon, beta
+      |                                  1
+Warning: Unused variable ‘epsilon’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:281:31:
+
+  281 |         real(kind(0d0)) :: pres   !< pressure
+      |                               1
+Warning: Unused variable ‘pres’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:280:67:
+
+  280 |         real(kind(0d0)), dimension(int(E_idx - mom_idx%beg)) :: vel    !< velocity
+      |                                                                   1
+Warning: Unused variable ‘vel’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:282:37:
+
+  282 |         real(kind(0d0)) :: x_centroid, y_centroid
+      |                                     1
+Warning: Unused variable ‘x_centroid’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:282:49:
+
+  282 |         real(kind(0d0)) :: x_centroid, y_centroid
+      |                                                 1
+Warning: Unused variable ‘y_centroid’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:118:40:
+
+  118 |         real(kind(0d0)) :: epsilon, beta
+      |                                        1
+Warning: Unused variable ‘beta’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:118:34:
+
+  118 |         real(kind(0d0)) :: epsilon, beta
+      |                                  1
+Warning: Unused variable ‘epsilon’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:116:32:
+
+  116 |         real(kind(0d0)) :: gamma  !< specific heat ratio function
+      |                                1
+Warning: Unused variable ‘gamma’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:115:31:
+
+  115 |         real(kind(0d0)) :: pres   !< pressure
+      |                               1
+Warning: Unused variable ‘pres’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:113:30:
+
+  113 |         real(kind(0d0)) :: rho    !< density
+      |                              1
+Warning: Unused variable ‘rho’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:114:67:
+
+  114 |         real(kind(0d0)), dimension(int(E_idx - mom_idx%beg)) :: vel    !< velocity
+      |                                                                   1
+Warning: Unused variable ‘vel’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:117:37:
+
+  117 |         real(kind(0d0)) :: x_centroid, y_centroid
+      |                                     1
+Warning: Unused variable ‘x_centroid’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_assign_variables.f90:117:49:
+
+  117 |         real(kind(0d0)) :: x_centroid, y_centroid
+      |                                                 1
+Warning: Unused variable ‘y_centroid’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_phase_change.fpp:312:44:
+
+  312 |         integer, dimension(num_fluids) :: ig !< flags to toggle the inclusion of fluids for the pT-equilibrium
+      |                                            1
+Warning: Unused variable ‘ig’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_phase_change.fpp:313:54:
+
+  313 |         real(kind(0.0d0)), dimension(num_fluids) :: pk !< individual initial pressures
+      |                                                      1
+Warning: Unused variable ‘pk’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/pre_process/m_data_output.fpp:109:30:
+
+  109 |         real(kind(0d0)) :: nR3
+      |                              1
+Warning: Unused variable ‘nr3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_data_output.fpp:110:31:
+
+  110 |         real(kind(0d0)) :: ntmp
+      |                               1
+Warning: Unused variable ‘ntmp’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1981:43:
+
+ 1981 |         type(ic_model_parameters) :: params
+      |                                           1
+Warning: Unused variable ‘params’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1563:59:
+
+ 1563 |         real(kind(0d0)) :: radius_pressure, pressure_bubble, pressure_inf !<
+      |                                                           1
+Warning: Unused variable ‘pressure_bubble’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1563:73:
+
+ 1563 |         real(kind(0d0)) :: radius_pressure, pressure_bubble, pressure_inf !<
+      |                                                                         1
+Warning: Unused variable ‘pressure_inf’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1563:42:
+
+ 1563 |         real(kind(0d0)) :: radius_pressure, pressure_bubble, pressure_inf !<
+      |                                          1
+Warning: Unused variable ‘radius_pressure’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1273:28:
+
+ 1273 |         real(kind(0d0)) :: a, b, c, d !< placeholderrs for the cell boundary values
+      |                            1
+Warning: Unused variable ‘a’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1273:31:
+
+ 1273 |         real(kind(0d0)) :: a, b, c, d !< placeholderrs for the cell boundary values
+      |                               1
+Warning: Unused variable ‘b’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1273:34:
+
+ 1273 |         real(kind(0d0)) :: a, b, c, d !< placeholderrs for the cell boundary values
+      |                                  1
+Warning: Unused variable ‘c’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1273:37:
+
+ 1273 |         real(kind(0d0)) :: a, b, c, d !< placeholderrs for the cell boundary values
+      |                                     1
+Warning: Unused variable ‘d’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1272:26:
+
+ 1272 |         integer :: i, j, k !< generic loop iterators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1221:33:
+
+ 1221 |         real(kind(0d0)) :: fac, a, b, c, d, pi_inf, gamma, lit_gamma
+      |                                 1
+Warning: Unused variable ‘a’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1221:36:
+
+ 1221 |         real(kind(0d0)) :: fac, a, b, c, d, pi_inf, gamma, lit_gamma
+      |                                    1
+Warning: Unused variable ‘b’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1221:39:
+
+ 1221 |         real(kind(0d0)) :: fac, a, b, c, d, pi_inf, gamma, lit_gamma
+      |                                       1
+Warning: Unused variable ‘c’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1221:42:
+
+ 1221 |         real(kind(0d0)) :: fac, a, b, c, d, pi_inf, gamma, lit_gamma
+      |                                          1
+Warning: Unused variable ‘d’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1221:30:
+
+ 1221 |         real(kind(0d0)) :: fac, a, b, c, d, pi_inf, gamma, lit_gamma
+      |                              1
+Warning: Unused variable ‘fac’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1219:23:
+
+ 1219 |         integer :: i, j, k
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1219:26:
+
+ 1219 |         integer :: i, j, k
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1161:28:
+
+ 1161 |         real(kind(0d0)) :: a, b, c, d, pi_inf, gamma, lit_gamma
+      |                            1
+Warning: Unused variable ‘a’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1161:31:
+
+ 1161 |         real(kind(0d0)) :: a, b, c, d, pi_inf, gamma, lit_gamma
+      |                               1
+Warning: Unused variable ‘b’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1161:34:
+
+ 1161 |         real(kind(0d0)) :: a, b, c, d, pi_inf, gamma, lit_gamma
+      |                                  1
+Warning: Unused variable ‘c’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1161:37:
+
+ 1161 |         real(kind(0d0)) :: a, b, c, d, pi_inf, gamma, lit_gamma
+      |                                     1
+Warning: Unused variable ‘d’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1159:23:
+
+ 1159 |         integer :: i, j, k
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1159:26:
+
+ 1159 |         integer :: i, j, k
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1081:26:
+
+ 1081 |         integer :: i, j, k !< generic loop iterators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:1016:26:
+
+ 1016 |         integer :: i, j, k !< Generic loop operators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:919:26:
+
+  919 |         integer :: i, j, k !< generic loop iterators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:766:26:
+
+  766 |         integer :: i, j, k !< Generic loop operators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:642:26:
+
+  642 |         integer :: i, j, k
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:469:103:
+
+  469 |         real(kind(0d0)) :: x0, y0, z0, lz, z_max, z_min, f, x_act, y_act, ca, pa, ma, ta, theta, xa, ya, yt, xu, yu, xl, yl, xc, yc, dycdxc, sin_c, cos_c
+      |                                                                                                       1
+Warning: Unused variable ‘ya’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:308:29:
+
+  308 |         integer :: i, j, k, l
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:307:81:
+
+  307 |         real(kind(0d0)) :: x0, y0, f, x_act, y_act, ca, pa, ma, ta, theta, xa, ya, yt, xu, yu, xl, yl, xc, yc, dycdxc, sin_c, cos_c
+      |                                                                                 1
+Warning: Unused variable ‘ya’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:229:26:
+
+  229 |         integer :: i, j, k !< Generic loop iterators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:104:23:
+
+  104 |         integer :: i, j, k !< Generic loop operators
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/pre_process/m_patches.fpp:104:26:
+
+  104 |         integer :: i, j, k !< Generic loop operators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/pre_process/m_initial_condition.fpp:121:33:
+
+  121 |         character(len=10) :: iStr
+      |                                 1
+Warning: Unused variable ‘istr’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/pre_process/p_main.f90:19:16:
+
+   19 |     integer :: i
+      |                1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_nvtx.f90:59:42:
+
+   59 |         type(nvtxEventAttributes) :: event
+      |                                          1
+Warning: Unused variable ‘event’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_eigen_solver.f90:355:49:
+
+  355 |                            norm, tst1, tst2, c, d
+      |                                                 1
+Warning: Unused variable ‘d’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_eigen_solver.f90:229:52:
+
+  229 |         real(kind(0d0)) :: f, g, h, fi, fr, scale, c
+      |                                                    1
+Warning: Unused variable ‘c’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:29:
+
+   81 |         integer :: i, j, q, k, l
+      |                             1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:32:
+
+   81 |         integer :: i, j, q, k, l
+      |                                1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:26:
+
+   81 |         integer :: i, j, q, k, l
+      |                          1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_helper.fpp:536:46:
+
+  536 |     subroutine s_prohibit_abort(condition, message)
+      |                                              1
+Warning: Unused variable ‘tmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_helper.fpp:373:40:
+
+  373 |     !! @return The cross product of the two vectors.
+      |                                        1
+Warning: Unused variable ‘f_transcoeff’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:2126:36:
+
+ 2126 |         integer :: pack_offsets(1:3), unpack_offsets(1:3)
+      |                                    1
+Warning: Unused variable ‘pack_offsets’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:2116:35:
+
+ 2116 |         integer :: i, j, k, l, r, q !< Generic loop iterators
+      |                                   1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:2126:57:
+
+ 2126 |         integer :: pack_offsets(1:3), unpack_offsets(1:3)
+      |                                                         1
+Warning: Unused variable ‘unpack_offsets’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:1270:20:
+
+ 1270 |         integer :: i, j, k, l, r !< Generic loop iterators
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:1271:60:
+
+ 1271 |         integer, pointer, dimension(:) :: p_i_send, p_i_recv
+      |                                                            1
+Warning: Unused variable ‘p_i_recv’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:1271:50:
+
+ 1271 |         integer, pointer, dimension(:) :: p_i_send, p_i_recv
+      |                                                  1
+Warning: Unused variable ‘p_i_send’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:864:60:
+
+  864 |         integer, pointer, dimension(:) :: p_i_send, p_i_recv
+      |                                                            1
+Warning: Unused variable ‘p_i_recv’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:864:50:
+
+  864 |         integer, pointer, dimension(:) :: p_i_send, p_i_recv
+      |                                                  1
+Warning: Unused variable ‘p_i_send’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:861:36:
+
+  861 |         integer :: pack_offsets(1:3), unpack_offsets(1:3)
+      |                                    1
+Warning: Unused variable ‘pack_offsets’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:861:57:
+
+  861 |         integer :: pack_offsets(1:3), unpack_offsets(1:3)
+      |                                                         1
+Warning: Unused variable ‘unpack_offsets’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_mpi_proxy.fpp:664:32:
+
+  664 |         integer :: dst_proc(1:3)
+      |                                1
+Warning: Unused variable ‘dst_proc’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_compute_levelset.fpp:391:39:
+
+  391 |         real(kind(0d0)) :: radius, dist
+      |                                       1
+Warning: Unused variable ‘dist’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_compute_levelset.fpp:394:72:
+
+  394 |         real(kind(0d0)), dimension(3) :: pos_vec, centroid_vec, dist_vec, dist_sides_vec, dist_surface_vec
+      |                                                                        1
+Warning: Unused variable ‘dist_vec’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_compute_levelset.fpp:273:26:
+
+  273 |         integer :: i, j, k !< Loop index variables
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_compute_levelset.fpp:167:33:
+
+  167 |         real(kind(0d0)) :: radius, dist, dist_surf, dist_side, global_dist
+      |                                 1
+Warning: Unused variable ‘radius’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_fftw.fpp:284:29:
+
+  284 |                 call fftw_execute_dft_c2r(bwd_plan, data_fltr_cmplx, data_real)
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_fftw.fpp:283:56:
+
+  283 |                 data_fltr_cmplx(1:Nfq) = data_cmplx(1:Nfq)
+      |                                                        1
+Warning: Unused variable ‘p_cmplx’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_fftw.fpp:283:73:
+
+  283 |                 data_fltr_cmplx(1:Nfq) = data_cmplx(1:Nfq)
+      |                                                                         1
+Warning: Unused variable ‘p_fltr_cmplx’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_fftw.fpp:282:44:
+
+  282 |                 call fftw_execute_dft_r2c(fwd_plan, data_real, data_cmplx)
+      |                                            1
+Warning: Unused variable ‘p_real’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_compute_levelset.fpp:84:33:
+
+   84 |         real(kind(0d0)) :: radius, dist, global_dist
+      |                                 1
+Warning: Unused variable ‘radius’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_boundary_conditions.fpp:1052:29:
+
+ 1052 |         integer :: j, k, l, q, i
+      |                             1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_boundary_conditions.fpp:910:29:
+
+  910 |         integer :: j, k, l, q, i
+      |                             1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_boundary_conditions.fpp:223:29:
+
+  223 |         integer :: j, k, l, q, i
+      |                             1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_boundary_conditions.fpp:36:33:
+
+   36 |         integer :: bc_loc, bc_dir
+      |                                 1
+Warning: Unused variable ‘bc_dir’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_boundary_conditions.fpp:36:25:
+
+   36 |         integer :: bc_loc, bc_dir
+      |                         1
+Warning: Unused variable ‘bc_loc’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1049:35:
+
+ 1049 |         real(kind(0d0)) :: dyn_pres
+      |                                   1
+Warning: Unused variable ‘dyn_pres’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1052:28:
+
+ 1052 |         real(kind(0d0)) :: G = 0d0
+      |                            1
+Warning: Unused variable ‘g’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1046:32:
+
+ 1046 |         real(kind(0d0)) :: gamma
+      |                                1
+Warning: Unused variable ‘gamma’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1055:20:
+
+ 1055 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1055:23:
+
+ 1055 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1055:26:
+
+ 1055 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1055:29:
+
+ 1055 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1050:31:
+
+ 1050 |         real(kind(0d0)) :: nbub, R3, vftmp, R3tmp
+      |                               1
+Warning: Unused variable ‘nbub’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1047:33:
+
+ 1047 |         real(kind(0d0)) :: pi_inf
+      |                                 1
+Warning: Unused variable ‘pi_inf’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1055:32:
+
+ 1055 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1048:29:
+
+ 1048 |         real(kind(0d0)) :: qv
+      |                             1
+Warning: Unused variable ‘qv’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1050:35:
+
+ 1050 |         real(kind(0d0)) :: nbub, R3, vftmp, R3tmp
+      |                                   1
+Warning: Unused variable ‘r3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1050:49:
+
+ 1050 |         real(kind(0d0)) :: nbub, R3, vftmp, R3tmp
+      |                                                 1
+Warning: Unused variable ‘r3tmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1053:45:
+
+ 1053 |         real(kind(0d0)), dimension(2) :: Re_K
+      |                                             1
+Warning: Unused variable ‘re_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1045:30:
+
+ 1045 |         real(kind(0d0)) :: rho
+      |                              1
+Warning: Unused variable ‘rho’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1051:46:
+
+ 1051 |         real(kind(0d0)), dimension(nb) :: Rtmp
+      |                                              1
+Warning: Unused variable ‘rtmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1050:42:
+
+ 1050 |         real(kind(0d0)) :: nbub, R3, vftmp, R3tmp
+      |                                          1
+Warning: Unused variable ‘vftmp’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:859:37:
+
+  859 |         real(kind(0d0)) :: vftmp, nR3, nbub_sc, R3tmp
+      |                                     1
+Warning: Unused variable ‘nr3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:867:32:
+
+  867 |         real(kind(0.d0)) :: ntmp
+      |                                1
+Warning: Unused variable ‘ntmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:865:32:
+
+  865 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:859:53:
+
+  859 |         real(kind(0d0)) :: vftmp, nR3, nbub_sc, R3tmp
+      |                                                     1
+Warning: Unused variable ‘r3tmp’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_cbc.fpp:663:34:
+
+  663 |         real(kind(0d0)) :: blkmod1, blkmod2 !< Fluid bulk modulus for Wood mixture sound speed
+      |                                  1
+Warning: Unused variable ‘blkmod1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_cbc.fpp:663:43:
+
+  663 |         real(kind(0d0)) :: blkmod1, blkmod2 !< Fluid bulk modulus for Wood mixture sound speed
+      |                                           1
+Warning: Unused variable ‘blkmod2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_cbc.fpp:661:32:
+
+  661 |         integer :: i, j, k, r, q !< Generic loop iterators
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_cbc.fpp:321:20:
+
+  321 | 
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_phase_change.fpp:312:44:
+
+  312 |         integer, dimension(num_fluids) :: ig !< flags to toggle the inclusion of fluids for the pT-equilibrium
+      |                                            1
+Warning: Unused variable ‘ig’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_phase_change.fpp:313:54:
+
+  313 |         real(kind(0.0d0)), dimension(num_fluids) :: pk !< individual initial pressures
+      |                                                      1
+Warning: Unused variable ‘pk’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_qbmm.fpp:846:40:
+
+  846 |         real(kind(0d0)) :: start, finish
+      |                                        1
+Warning: Unused variable ‘finish’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_qbmm.fpp:849:23:
+
+  849 |         integer :: j, k, l, q, r, s !< Loop variables
+      |                       1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_qbmm.fpp:849:26:
+
+  849 |         integer :: j, k, l, q, r, s !< Loop variables
+      |                          1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_qbmm.fpp:844:67:
+
+  844 |         real(kind(0d0)), dimension(nterms, 0:2, 0:2) :: mom3d_terms, coeff
+      |                                                                   1
+Warning: Unused variable ‘mom3d_terms’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_qbmm.fpp:845:54:
+
+  845 |         real(kind(0d0)) :: pres, rho, nbub, c, alf, R3, momsum, drdt, drdt2, chi_vw, x_vw, rho_mw, k_mw, T_bar, grad_T
+      |                                                      1
+Warning: Unused variable ‘r3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_qbmm.fpp:849:35:
+
+  849 |         integer :: j, k, l, q, r, s !< Loop variables
+      |                                   1
+Warning: Unused variable ‘s’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_qbmm.fpp:846:32:
+
+  846 |         real(kind(0d0)) :: start, finish
+      |                                1
+Warning: Unused variable ‘start’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_qbmm.fpp:779:28:
+
+  779 |         integer :: i1, i2, q
+      |                            1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_qbmm.fpp:705:28:
+
+  705 |         integer :: i1, i2, q
+      |                            1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:924:32:
+
+  924 |         real(kind(0.d0)) :: tmp1, tmp2
+      |                                1
+Warning: Unused variable ‘tmp1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:924:38:
+
+  924 |         real(kind(0.d0)) :: tmp1, tmp2
+      |                                      1
+Warning: Unused variable ‘tmp2’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:464:40:
+
+  464 |         real(kind(0d0)) :: h0, h1, h_min !< Time step size
+      |                                        1
+Warning: Unused variable ‘h_min’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:199:40:
+
+  199 |         real(kind(0d0)) :: start, finish
+      |                                        1
+Warning: Unused variable ‘finish’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:206:24:
+
+  206 |         integer :: ndirs  !< Number of coordinate directions
+      |                        1
+Warning: Unused variable ‘ndirs’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:203:43:
+
+  203 |         real(kind(0d0)), dimension(2) :: Re !< Reynolds number
+      |                                           1
+Warning: Unused variable ‘re’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:199:32:
+
+  199 |         real(kind(0d0)) :: start, finish
+      |                                1
+Warning: Unused variable ‘start’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:131:20:
+
+  131 |         integer :: i, j, k, l, q
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:131:32:
+
+  131 |         integer :: i, j, k, l, q
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:90:20:
+
+   90 |         end if
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:90:23:
+
+   90 |         end if
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:90:26:
+
+   90 |         end if
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_bubbles.fpp:90:32:
+
+   90 |         end if
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:654:23:
+
+  654 |         integer :: i, j, k, l, q !< Iterator variables
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:654:26:
+
+  654 |         integer :: i, j, k, l, q !< Iterator variables
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:654:29:
+
+  654 |         integer :: i, j, k, l, q !< Iterator variables
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:654:32:
+
+  654 |         integer :: i, j, k, l, q !< Iterator variables
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:452:29:
+
+  452 |         integer :: i, j, k, l, q !< Iterator variables
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:452:32:
+
+  452 |         integer :: i, j, k, l, q !< Iterator variables
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:148:41:
+
+  148 |         real(kind(0d0)) :: pres_IP, coeff
+      |                                         1
+Warning: Unused variable ‘coeff’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:94:20:
+
+   94 |         integer :: i, j, k
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:94:23:
+
+   94 |         integer :: i, j, k
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_ibm.fpp:94:26:
+
+   94 |         integer :: i, j, k
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:1080:20:
+
+ 1080 |         integer :: i, j
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:1080:23:
+
+ 1080 |         integer :: i, j
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:801:20:
+
+  801 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:523:45:
+
+  523 |         real(kind(0d0)), pointer :: beta_p(:)
+      |                                             1
+Warning: Unused variable ‘beta_p’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:529:40:
+
+  529 |         integer :: t1, t2, c_rate, c_max
+      |                                        1
+Warning: Unused variable ‘c_max’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:529:33:
+
+  529 |         integer :: t1, t2, c_rate, c_max
+      |                                 1
+Warning: Unused variable ‘c_rate’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:527:32:
+
+  527 |         integer :: i, j, k, l, r, s, w
+      |                                1
+Warning: Unused variable ‘r’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:527:35:
+
+  527 |         integer :: i, j, k, l, r, s, w
+      |                                   1
+Warning: Unused variable ‘s’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:529:21:
+
+  529 |         integer :: t1, t2, c_rate, c_max
+      |                     1
+Warning: Unused variable ‘t1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:529:25:
+
+  529 |         integer :: t1, t2, c_rate, c_max
+      |                         1
+Warning: Unused variable ‘t2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:525:32:
+
+  525 |         real(kind(0d0)) :: v_rs1, v_rs2, v_rs3, v_rs4, v_rs5
+      |                                1
+Warning: Unused variable ‘v_rs1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:525:39:
+
+  525 |         real(kind(0d0)) :: v_rs1, v_rs2, v_rs3, v_rs4, v_rs5
+      |                                       1
+Warning: Unused variable ‘v_rs2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:525:46:
+
+  525 |         real(kind(0d0)) :: v_rs1, v_rs2, v_rs3, v_rs4, v_rs5
+      |                                              1
+Warning: Unused variable ‘v_rs3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:525:53:
+
+  525 |         real(kind(0d0)) :: v_rs1, v_rs2, v_rs3, v_rs4, v_rs5
+      |                                                     1
+Warning: Unused variable ‘v_rs4’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:525:60:
+
+  525 |         real(kind(0d0)) :: v_rs1, v_rs2, v_rs3, v_rs4, v_rs5
+      |                                                            1
+Warning: Unused variable ‘v_rs5’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:527:38:
+
+  527 |         integer :: i, j, k, l, r, s, w
+      |                                      1
+Warning: Unused variable ‘w’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:323:20:
+
+  323 |                     ! any contributions from outside of the physical domain during
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_weno.fpp:323:23:
+
+  323 |                     ! any contributions from outside of the physical domain during
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:1702:20:
+
+ 1702 |         integer :: i !< Generic loop iterator
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:1663:20:
+
+ 1663 |         integer :: i !< Generic loop iterator
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:1661:35:
+
+ 1661 |         type(int_bounds_info) :: ix, iy, iz
+      |                                   1
+Warning: Unused variable ‘ix’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:1661:39:
+
+ 1661 |         type(int_bounds_info) :: ix, iy, iz
+      |                                       1
+Warning: Unused variable ‘iy’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:1661:43:
+
+ 1661 |         type(int_bounds_info) :: ix, iy, iz
+      |                                           1
+Warning: Unused variable ‘iz’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:1086:34:
+
+ 1086 |             alf = 0d0
+      |                                  1
+Warning: Unused variable ‘blkmod1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:1086:43:
+
+ 1086 |             alf = 0d0
+      |                                           1
+Warning: Unused variable ‘blkmod2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:1074:30:
+
+ 1074 |             c = 0d0
+      |                              1
+Warning: Unused variable ‘e_e’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:1079:35:
+
+ 1079 |             M00 = 0d0
+      |                                   1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:512:30:
+
+  512 | 
+      |                              1
+Warning: Unused variable ‘e_e’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:505:33:
+
+  505 | 
+      |                                 1
+Warning: Unused variable ‘ii’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:508:31:
+
+  508 |                 open (2, FILE=trim(file_path), &
+      |                               1
+Warning: Unused variable ‘nbub’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:508:36:
+
+  508 |                 open (2, FILE=trim(file_path), &
+      |                                    1
+Warning: Unused variable ‘nr3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:507:47:
+
+  507 | 
+      |                                               1
+Warning: Unused variable ‘nrtmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:511:43:
+
+  511 |                 write (2) z_cb(-1:p); close (2)
+      |                                           1
+Warning: Unused variable ‘re’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:510:30:
+
+  510 |                       STATUS='new')
+      |                              1
+Warning: Unused variable ‘rho’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:508:43:
+
+  508 |                 open (2, FILE=trim(file_path), &
+      |                                           1
+Warning: Unused variable ‘vftmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:277:34:
+
+  277 | 
+      |                                  1
+Warning: Unused variable ‘blkmod1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:277:43:
+
+  277 | 
+      |                                           1
+Warning: Unused variable ‘blkmod2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_data_output.fpp:280:32:
+
+  280 | 
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_viscous.fpp:1498:20:
+
+ 1498 |         integer :: i
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:879:34:
+
+  879 |         real(kind(0d0)) :: blkmod1, blkmod2
+      |                                  1
+Warning: Unused variable ‘blkmod1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:879:43:
+
+  879 |         real(kind(0d0)) :: blkmod1, blkmod2
+      |                                           1
+Warning: Unused variable ‘blkmod2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:882:40:
+
+  882 |         real(kind(0d0)) :: start, finish
+      |                                        1
+Warning: Unused variable ‘finish’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:868:54:
+
+  868 |         real(kind(0d0)), dimension(nb, nmom) :: moms_L, moms_R
+      |                                                      1
+Warning: Unused variable ‘moms_l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:868:62:
+
+  868 |         real(kind(0d0)), dimension(nb, nmom) :: moms_L, moms_R
+      |                                                              1
+Warning: Unused variable ‘moms_r’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:882:32:
+
+  882 |         real(kind(0d0)) :: start, finish
+      |                                1
+Warning: Unused variable ‘start’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:854:55:
+
+  854 |         real(kind(0d0)), dimension(num_dims) :: vel_avg
+      |                                                       1
+Warning: Unused variable ‘vel_avg’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:846:30:
+
+  846 |         real(kind(0d0)) :: Y_L, Y_R
+      |                              1
+Warning: Unused variable ‘y_l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:846:35:
+
+  846 |         real(kind(0d0)) :: Y_L, Y_R
+      |                                   1
+Warning: Unused variable ‘y_r’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:497:34:
+
+  497 |                                         ! Additional terms in 2D and 3D
+      |                                  1
+Warning: Unused variable ‘blkmod1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:497:43:
+
+  497 |                                         ! Additional terms in 2D and 3D
+      |                                           1
+Warning: Unused variable ‘blkmod2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:498:43:
+
+  498 |                                         if ((i == 2) .or. (i == 4) .or. (i == 5)) then
+      |                                           1
+Warning: Unused variable ‘e_star’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:494:33:
+
+  494 |                                     if ((G_L > 1000) .and. (G_R > 1000)) then
+      |                                 1
+Warning: Unused variable ‘nbub_l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:494:41:
+
+  494 |                                     if ((G_L > 1000) .and. (G_R > 1000)) then
+      |                                         1
+Warning: Unused variable ‘nbub_r’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:498:61:
+
+  498 |                                         if ((i == 2) .or. (i == 4) .or. (i == 5)) then
+      |                                                             1
+Warning: Unused variable ‘p_k_star’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:498:51:
+
+  498 |                                         if ((i == 2) .or. (i == 4) .or. (i == 5)) then
+      |                                                   1
+Warning: Unused variable ‘p_star’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:498:35:
+
+  498 |                                         if ((i == 2) .or. (i == 4) .or. (i == 5)) then
+      |                                   1
+Warning: Unused variable ‘rho_star’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:485:55:
+
+  485 |                                 !$acc loop seq
+      |                                                       1
+Warning: Unused variable ‘vel_avg’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:491:31:
+
+  491 |                                 do i = 1, strxe - strxb + 1
+      |                               1
+Warning: Unused variable ‘xi_l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:491:37:
+
+  491 |                                 do i = 1, strxe - strxb + 1
+      |                                     1
+Warning: Unused variable ‘xi_r’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:475:30:
+
+  475 |                             if (hypoelasticity) then
+      |                              1
+Warning: Unused variable ‘y_l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_riemann_solvers.fpp:475:35:
+
+  475 |                             if (hypoelasticity) then
+      |                                   1
+Warning: Unused variable ‘y_r’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:2225:26:
+
+ 2225 |         integer :: i, j, k, l !< Generic loop iterators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:2101:20:
+
+ 2101 |         integer :: i, j, k, l
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:2101:23:
+
+ 2101 |         integer :: i, j, k, l
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:2101:26:
+
+ 2101 |         integer :: i, j, k, l
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:2101:29:
+
+ 2101 |         integer :: i, j, k, l
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:1605:32:
+
+ 1605 |         integer :: i, j, k, l, q
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:723:40:
+
+  723 |         real(kind(0d0)) :: myR, myV, alf, myP, myRho, R2Vav
+      |                                        1
+Warning: Unused variable ‘alf’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:718:54:
+
+  718 |                            myH, myHdot, rddot, alf_gas
+      |                                                      1
+Warning: Unused variable ‘alf_gas’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:720:48:
+
+  720 |         real(kind(0d0)) :: n_tait, B_tait, angle, angle_z
+      |                                                1
+Warning: Unused variable ‘angle’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:720:57:
+
+  720 |         real(kind(0d0)) :: n_tait, B_tait, angle, angle_z
+      |                                                         1
+Warning: Unused variable ‘angle_z’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:720:41:
+
+  720 |         real(kind(0d0)) :: n_tait, B_tait, angle, angle_z
+      |                                         1
+Warning: Unused variable ‘b_tait’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:712:38:
+
+  712 |         real(kind(0d0)) :: top, bottom  !< Numerator and denominator when evaluating flux limiter function
+      |                                      1
+Warning: Unused variable ‘bottom’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:716:32:
+
+  716 |                            c_gas, c_liquid, &
+      |                                1
+Warning: Unused variable ‘c_gas’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:716:42:
+
+  716 |                            c_gas, c_liquid, &
+      |                                          1
+Warning: Unused variable ‘c_liquid’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:729:40:
+
+  729 |         real(kind(0d0)) :: s2, const_sos, s1
+      |                                        1
+Warning: Unused variable ‘const_sos’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:717:31:
+
+  717 |                            Cpbw, Cpinf, Cpinf_dot, &
+      |                               1
+Warning: Unused variable ‘cpbw’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:717:38:
+
+  717 |                            Cpbw, Cpinf, Cpinf_dot, &
+      |                                      1
+Warning: Unused variable ‘cpinf’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:717:49:
+
+  717 |                            Cpbw, Cpinf, Cpinf_dot, &
+      |                                                 1
+Warning: Unused variable ‘cpinf_dot’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:728:40:
+
+  728 |         real(kind(0d0)) :: start, finish
+      |                                        1
+Warning: Unused variable ‘finish’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:710:33:
+
+  710 |         real(kind(0d0)) :: gp_sum
+      |                                 1
+Warning: Unused variable ‘gp_sum’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:731:36:
+
+  731 |         integer :: i, j, k, l, q, ii, id !< Generic loop iterators
+      |                                    1
+Warning: Unused variable ‘ii’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:713:70:
+
+  713 |         real(kind(0d0)), dimension(num_fluids) :: myalpha_rho, myalpha
+      |                                                                      1
+Warning: Unused variable ‘myalpha’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:713:61:
+
+  713 |         real(kind(0d0)), dimension(num_fluids) :: myalpha_rho, myalpha
+      |                                                             1
+Warning: Unused variable ‘myalpha_rho’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:718:30:
+
+  718 |                            myH, myHdot, rddot, alf_gas
+      |                              1
+Warning: Unused variable ‘myh’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:718:38:
+
+  718 |                            myH, myHdot, rddot, alf_gas
+      |                                      1
+Warning: Unused variable ‘myhdot’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:723:45:
+
+  723 |         real(kind(0d0)) :: myR, myV, alf, myP, myRho, R2Vav
+      |                                             1
+Warning: Unused variable ‘myp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:723:30:
+
+  723 |         real(kind(0d0)) :: myR, myV, alf, myP, myRho, R2Vav
+      |                              1
+Warning: Unused variable ‘myr’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:723:52:
+
+  723 |         real(kind(0d0)) :: myR, myV, alf, myP, myRho, R2Vav
+      |                                                    1
+Warning: Unused variable ‘myrho’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:727:33:
+
+  727 |         real(kind(0d0)) :: mytime, sound
+      |                                 1
+Warning: Unused variable ‘mytime’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:723:35:
+
+  723 |         real(kind(0d0)) :: myR, myV, alf, myP, myRho, R2Vav
+      |                                   1
+Warning: Unused variable ‘myv’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:720:33:
+
+  720 |         real(kind(0d0)) :: n_tait, B_tait, angle, angle_z
+      |                                 1
+Warning: Unused variable ‘n_tait’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:725:24:
+
+  725 |         integer :: ndirs
+      |                        1
+Warning: Unused variable ‘ndirs’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:731:32:
+
+  731 |         integer :: i, j, k, l, q, ii, id !< Generic loop iterators
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:723:59:
+
+  723 |         real(kind(0d0)) :: myR, myV, alf, myP, myRho, R2Vav
+      |                                                           1
+Warning: Unused variable ‘r2vav’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:718:45:
+
+  718 |                            myH, myHdot, rddot, alf_gas
+      |                                             1
+Warning: Unused variable ‘rddot’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:722:46:
+
+  722 |         real(kind(0d0)), dimension(nb) :: Rtmp, Vtmp
+      |                                              1
+Warning: Unused variable ‘rtmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:729:44:
+
+  729 |         real(kind(0d0)) :: s2, const_sos, s1
+      |                                            1
+Warning: Unused variable ‘s1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:729:29:
+
+  729 |         real(kind(0d0)) :: s2, const_sos, s1
+      |                             1
+Warning: Unused variable ‘s2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:727:40:
+
+  727 |         real(kind(0d0)) :: mytime, sound
+      |                                        1
+Warning: Unused variable ‘sound’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:728:32:
+
+  728 |         real(kind(0d0)) :: start, finish
+      |                                1
+Warning: Unused variable ‘start’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:732:29:
+
+  732 |         integer :: term_index
+      |                             1
+Warning: Unused variable ‘term_index’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:715:31:
+
+  715 |         real(kind(0d0)) :: tmp1, tmp2, tmp3, tmp4, &
+      |                               1
+Warning: Unused variable ‘tmp1’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:715:37:
+
+  715 |         real(kind(0d0)) :: tmp1, tmp2, tmp3, tmp4, &
+      |                                     1
+Warning: Unused variable ‘tmp2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:715:43:
+
+  715 |         real(kind(0d0)) :: tmp1, tmp2, tmp3, tmp4, &
+      |                                           1
+Warning: Unused variable ‘tmp3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:715:49:
+
+  715 |         real(kind(0d0)) :: tmp1, tmp2, tmp3, tmp4, &
+      |                                                 1
+Warning: Unused variable ‘tmp4’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:712:30:
+
+  712 |         real(kind(0d0)) :: top, bottom  !< Numerator and denominator when evaluating flux limiter function
+      |                              1
+Warning: Unused variable ‘top’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_rhs.fpp:722:52:
+
+  722 |         real(kind(0d0)), dimension(nb) :: Rtmp, Vtmp
+      |                                                    1
+Warning: Unused variable ‘vtmp’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:915:20:
+
+  915 |                                                    ldt*rhs_vf(i)%sf(j, k, l)
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:915:23:
+
+  915 |                                                    ldt*rhs_vf(i)%sf(j, k, l)
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:915:26:
+
+  915 |                                                    ldt*rhs_vf(i)%sf(j, k, l)
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:915:29:
+
+  915 |                                                    ldt*rhs_vf(i)%sf(j, k, l)
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:915:32:
+
+  915 |                                                    ldt*rhs_vf(i)%sf(j, k, l)
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:880:20:
+
+  880 | 
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:880:23:
+
+  880 | 
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:880:26:
+
+  880 | 
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:880:29:
+
+  880 | 
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:619:42:
+
+  619 |         !Evolve pb and mv for non-polytropic qbmm
+      |                                          1
+Warning: Unused variable ‘denom’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:619:58:
+
+  619 |         !Evolve pb and mv for non-polytropic qbmm
+      |                                                          1
+Warning: Unused variable ‘error_fraction’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:621:33:
+
+  621 |             !$acc parallel loop collapse(5) gang vector default(present)
+      |                                 1
+Warning: Unused variable ‘nr3bar’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:619:76:
+
+  619 |         !Evolve pb and mv for non-polytropic qbmm
+      |                                                                            1
+Warning: Unused variable ‘time_step_factor’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:619:35:
+
+  619 |         !Evolve pb and mv for non-polytropic qbmm
+      |                                   1
+Warning: Unused variable ‘ts_error’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:441:33:
+
+  441 |             do i = 1, nb
+      |                                 1
+Warning: Unused variable ‘nr3bar’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_time_steppers.fpp:334:33:
+
+  334 |             end do
+      |                                 1
+Warning: Unused variable ‘nr3bar’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_start_up.fpp:1328:23:
+
+ 1328 |         integer :: ierr
+      |                       1
+Warning: Unused variable ‘ierr’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_start_up.fpp:1086:23:
+
+ 1086 |         integer :: i, j, k, l
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_start_up.fpp:1086:26:
+
+ 1086 |         integer :: i, j, k, l
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_start_up.fpp:1086:29:
+
+ 1086 |         integer :: i, j, k, l
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/simulation/m_start_up.fpp:224:20:
+
+  224 |         integer :: i, j
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_start_up.fpp:224:23:
+
+  224 |         integer :: i, j
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/simulation/m_start_up.fpp:130:45:
+
+  130 |         CHARACTER(len=511) :: CRAY_ACC_MODULE
+      |                                             1
+Warning: Unused variable ‘cray_acc_module’ declared at (1) [-Wunused-variable]
+--
+      | ^~~~~~~~~~~~~~~~~~~
+/home/bok/dev/MFC/build/staging/hdf5/hdf5-prefix/src/hdf5/src/H5private.h:2558:37: note: in expansion of macro ‘H5_MY_PKG’
+ 2558 | H5_PKG_DECLARE_FUNC(H5_MY_PKG_INIT, H5_MY_PKG)
+      |                                     ^~~~~~~~~
+/home/bok/dev/MFC/build/staging/hdf5/hdf5-prefix/src/hdf5/src/H5FDdrvr_module.h:27:24: warning: ‘H5FD_init_g’ defined but not used [-Wunused-variable]
+--
+      | ^~~~~~~~~~~~~~~~~~~
+/home/bok/dev/MFC/build/staging/hdf5/hdf5-prefix/src/hdf5/src/H5private.h:2558:37: note: in expansion of macro ‘H5_MY_PKG’
+ 2558 | H5_PKG_DECLARE_FUNC(H5_MY_PKG_INIT, H5_MY_PKG)
+      |                                     ^~~~~~~~~
+/home/bok/dev/MFC/build/staging/hdf5/hdf5-prefix/src/hdf5/src/H5FDdrvr_module.h:27:24: warning: ‘H5FD_init_g’ defined but not used [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_eigen_solver.f90:355:49:
+
+  355 |                            norm, tst1, tst2, c, d
+      |                                                 1
+Warning: Unused variable ‘d’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_eigen_solver.f90:229:52:
+
+  229 |         real(kind(0d0)) :: f, g, h, fi, fr, scale, c
+      |                                                    1
+Warning: Unused variable ‘c’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:76:44:
+
+   76 |         integer, dimension(1) :: airfoil_glb, airfoil_loc, airfoil_start
+      |                                            1
+Warning: Unused variable ‘airfoil_glb’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:76:57:
+
+   76 |         integer, dimension(1) :: airfoil_glb, airfoil_loc, airfoil_start
+      |                                                         1
+Warning: Unused variable ‘airfoil_loc’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:76:72:
+
+   76 |         integer, dimension(1) :: airfoil_glb, airfoil_loc, airfoil_start
+      |                                                                        1
+Warning: Unused variable ‘airfoil_start’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:23:
+
+   81 |         integer :: i, j, q, k, l
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:29:
+
+   81 |         integer :: i, j, q, k, l
+      |                             1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:32:
+
+   81 |         integer :: i, j, q, k, l
+      |                                1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_mpi_common.fpp:81:26:
+
+   81 |         integer :: i, j, q, k, l
+      |                          1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_helper.fpp:464:46:
+
+  464 |         real(kind(0d0)), dimension(1:4) :: tmp
+      |                                              1
+Warning: Unused variable ‘tmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_helper.fpp:301:40:
+
+  301 |         real(kind(0.d0)) :: f_transcoeff
+      |                                        1
+Warning: Unused variable ‘f_transcoeff’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1208:57:
+
+ 1208 |         real(kind(0d0)), dimension(num_fluids) :: alpha_K
+      |                                                         1
+Warning: Unused variable ‘alpha_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1207:61:
+
+ 1207 |         real(kind(0d0)), dimension(num_fluids) :: alpha_rho_K
+      |                                                             1
+Warning: Unused variable ‘alpha_rho_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1213:30:
+
+ 1213 |         real(kind(0d0)) :: E_K
+      |                              1
+Warning: Unused variable ‘e_k’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1218:30:
+
+ 1218 |         real(kind(0d0)) :: G_K
+      |                              1
+Warning: Unused variable ‘g_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1214:34:
+
+ 1214 |         real(kind(0d0)) :: gamma_K
+      |                                  1
+Warning: Unused variable ‘gamma_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1220:20:
+
+ 1220 |         integer :: i, j, k, l !< Generic loop iterators
+      |                    1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1220:23:
+
+ 1220 |         integer :: i, j, k, l !< Generic loop iterators
+      |                       1
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1220:26:
+
+ 1220 |         integer :: i, j, k, l !< Generic loop iterators
+      |                          1
+Warning: Unused variable ‘k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1220:29:
+
+ 1220 |         integer :: i, j, k, l !< Generic loop iterators
+      |                             1
+Warning: Unused variable ‘l’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1215:35:
+
+ 1215 |         real(kind(0d0)) :: pi_inf_K
+      |                                   1
+Warning: Unused variable ‘pi_inf_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1212:33:
+
+ 1212 |         real(kind(0d0)) :: pres_K
+      |                                 1
+Warning: Unused variable ‘pres_k’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1216:31:
+
+ 1216 |         real(kind(0d0)) :: qv_K
+      |                               1
+Warning: Unused variable ‘qv_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1217:45:
+
+ 1217 |         real(kind(0d0)), dimension(2) :: Re_K
+      |                                             1
+Warning: Unused variable ‘re_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1209:32:
+
+ 1209 |         real(kind(0d0)) :: rho_K
+      |                                1
+Warning: Unused variable ‘rho_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1210:53:
+
+ 1210 |         real(kind(0d0)), dimension(num_dims) :: vel_K
+      |                                                     1
+Warning: Unused variable ‘vel_k’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1211:36:
+
+ 1211 |         real(kind(0d0)) :: vel_K_sum
+      |                                    1
+Warning: Unused variable ‘vel_k_sum’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1055:32:
+
+ 1055 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1050:35:
+
+ 1050 |         real(kind(0d0)) :: nbub, R3, vftmp, R3tmp
+      |                                   1
+Warning: Unused variable ‘r3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:1050:42:
+
+ 1050 |         real(kind(0d0)) :: nbub, R3, vftmp, R3tmp
+      |                                          1
+Warning: Unused variable ‘vftmp’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:859:37:
+
+  859 |         real(kind(0d0)) :: vftmp, nR3, nbub_sc, R3tmp
+      |                                     1
+Warning: Unused variable ‘nr3’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:867:32:
+
+  867 |         real(kind(0.d0)) :: ntmp
+      |                                1
+Warning: Unused variable ‘ntmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:865:32:
+
+  865 |         integer :: i, j, k, l, q !< Generic loop iterators
+      |                                1
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/common/m_variables_conversion.fpp:859:53:
+
+  859 |         real(kind(0d0)) :: vftmp, nR3, nbub_sc, R3tmp
+      |                                                     1
+Warning: Unused variable ‘r3tmp’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/build/staging/52da9cba4d/include/post_process/case.fpp:630:23:
+
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+
+Warning: Unused dummy argument ‘gamma_k’ at (1) [-Wunused-dummy-argument]
+/home/bok/dev/MFC/build/staging/52da9cba4d/include/post_process/case.fpp:574:20:
+
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/build/staging/52da9cba4d/include/post_process/case.fpp:574:23:
+
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+
+Warning: Unused dummy argument ‘alpha_k’ at (1) [-Wunused-dummy-argument]
+/home/bok/dev/MFC/build/staging/52da9cba4d/include/post_process/case.fpp:496:38:
+
+Warning: Unused variable ‘alpha_k_sum’ declared at (1) [-Wunused-variable]
+--
+
+Warning: Dummy argument ‘gamma_k’ at (1) was declared INTENT(OUT) but was not set [-Wunused-dummy-argument]
+/home/bok/dev/MFC/build/staging/52da9cba4d/include/post_process/case.fpp:495:20:
+
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/build/staging/52da9cba4d/include/post_process/case.fpp:495:23:
+
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+
+Warning: Dummy argument ‘rho_k’ at (1) was declared INTENT(OUT) but was not set [-Wunused-dummy-argument]
+/home/bok/dev/MFC/build/staging/52da9cba4d/include/post_process/case.fpp:407:23:
+
+Warning: Unused variable ‘j’ declared at (1) [-Wunused-variable]
+--
+
+Warning: Dummy argument ‘g_k’ at (1) was declared INTENT(OUT) but was not set [-Wunused-dummy-argument]
+/home/bok/dev/MFC/build/staging/52da9cba4d/include/post_process/case.fpp:280:23:
+
+Warning: Unused variable ‘q’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/post_process/m_data_output.fpp:766:40:
+
+  766 |         real(kind(0d0)) :: start, finish
+      |                                        1
+Warning: Unused variable ‘finish’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_data_output.fpp:766:32:
+
+  766 |         real(kind(0d0)) :: start, finish
+      |                                1
+Warning: Unused variable ‘start’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_data_input.f90:261:40:
+
+  261 |         real(kind(0d0)) :: start, finish
+      |                                        1
+Warning: Unused variable ‘finish’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_data_input.f90:261:32:
+
+  261 |         real(kind(0d0)) :: start, finish
+      |                                1
+Warning: Unused variable ‘start’ declared at (1) [-Wunused-variable]
+--
+/home/bok/dev/MFC/src/post_process/m_derived_variables.fpp:590:38:
+
+  590 |         real(kind(0d0)) :: alpha_unadv !< Unadvected volume fraction
+      |                                      1
+Warning: Unused variable ‘alpha_unadv’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_derived_variables.fpp:496:42:
+
+  496 |         real(kind(0d0)) :: trS, trS2, trO2, Q, IIS
+      |                                          1
+Warning: Unused variable ‘tro2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_derived_variables.fpp:496:36:
+
+  496 |         real(kind(0d0)) :: trS, trS2, trO2, Q, IIS
+      |                                    1
+Warning: Unused variable ‘trs2’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_derived_variables.fpp:336:39:
+
+  336 |         integer :: nrhs, lda, ldb, info
+      |                                       1
+Warning: Unused variable ‘info’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_derived_variables.fpp:334:40:
+
+  334 |         integer, dimension(ndim) :: ipiv
+      |                                        1
+Warning: Unused variable ‘ipiv’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_derived_variables.fpp:336:28:
+
+  336 |         integer :: nrhs, lda, ldb, info
+      |                            1
+Warning: Unused variable ‘lda’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_derived_variables.fpp:336:33:
+
+  336 |         integer :: nrhs, lda, ldb, info
+      |                                 1
+Warning: Unused variable ‘ldb’ declared at (1) [-Wunused-variable]
+/home/bok/dev/MFC/src/post_process/m_derived_variables.fpp:336:23:
+
+  336 |         integer :: nrhs, lda, ldb, info
+      |                       1
+Warning: Unused variable ‘nrhs’ declared at (1) [-Wunused-variable]

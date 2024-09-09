@@ -1,0 +1,11 @@
+      | ^~~~~~~~~~~~~~~~~~~
+/home/bok/dev/MFC/build/staging/hdf5/hdf5-prefix/src/hdf5/src/H5private.h:2558:37: note: in expansion of macro ‘H5_MY_PKG’
+ 2558 | H5_PKG_DECLARE_FUNC(H5_MY_PKG_INIT, H5_MY_PKG)
+      |                                     ^~~~~~~~~
+/home/bok/dev/MFC/build/staging/hdf5/hdf5-prefix/src/hdf5/src/H5FDdrvr_module.h:27:24: warning: ‘H5FD_init_g’ defined but not used [-Wunused-variable]
+--
+      | ^~~~~~~~~~~~~~~~~~~
+/home/bok/dev/MFC/build/staging/hdf5/hdf5-prefix/src/hdf5/src/H5private.h:2558:37: note: in expansion of macro ‘H5_MY_PKG’
+ 2558 | H5_PKG_DECLARE_FUNC(H5_MY_PKG_INIT, H5_MY_PKG)
+      |                                     ^~~~~~~~~
+/home/bok/dev/MFC/build/staging/hdf5/hdf5-prefix/src/hdf5/src/H5FDdrvr_module.h:27:24: warning: ‘H5FD_init_g’ defined but not used [-Wunused-variable]
