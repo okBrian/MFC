@@ -45,6 +45,10 @@ jobs:
                 grep -F 'Wunused-dummy-argument' pr.txt -B 4 >> prDummy.txt
                 grep -F 'Wunused-dummy-argument' master.txt -B 4 >> masterDummy.txt
                 grep -vxFf masterDummy.txt prDummy.txt -B 4 
+            
+            - name: test
+              run: |
+                grep -vxFf masterDummy.txt prDummy.txt -B 4 
 
             - name: Unused Value Diff
               run: |
