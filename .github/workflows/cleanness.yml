@@ -36,7 +36,8 @@ jobs:
               run: |
                 grep -F 'Wunused-variable' master.txt -B 4 >> mUnused.txt
                 grep -F 'Wunused-variable' pr.txt -B 4 >> prUnused.txt
-                # grep -vf mUnused.txt prUnused.txt  
+                # grep -vf mUnused.txt prUnused.txt
+                awk 'NR==FNR{a[$0]=1;next}!a[$0]' mUnused.txt prUnused.txt
             
             - name: Unused Dummy Arguments Diff
               run: |
