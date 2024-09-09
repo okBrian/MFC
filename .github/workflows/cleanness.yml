@@ -34,8 +34,8 @@ jobs:
             
             - name: Unused Variables Diff
               run: |
-                grep -F 'Wunused-variable' master.txt >> mUnused.txt
-                grep -F 'Wunused-variable' pr.txt >> prUnused.txt
+                grep -F 'Wunused-variable' master.txt > mUnused.txt
+                grep -F 'Wunused-variable' pr.txt > prUnused.txt
                 diff prUnused.txt mUnused.txt
             
             - name: Unused Dummy Arguments Diff
