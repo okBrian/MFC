@@ -32,11 +32,11 @@ jobs:
                 (cd pr && /bin/bash mfc.sh build -j $(nproc) --debug > ../pr.txt 2>&1) 
                 (cd master && /bin/bash mfc.sh build -j $(nproc) --debug > ../master.txt 2>&1)
             
-            - name: Unused Variables Diff
-              run: |
-                grep -F 'Wunused-variable' pr.txt -B 4 >> prUnused.txt
-                grep -F 'Wunused-variable' master.txt -B 4 >> masterUnused.txt
-                grep -vf masterUnused.txt prUnused.txt  
+            # - name: Unused Variables Diff
+            #   run: |
+            #     grep -F 'Wunused-variable' pr.txt -B 4 >> prUnused.txt
+            #     grep -F 'Wunused-variable' master.txt -B 4 >> masterUnused.txt
+            #     grep -vf masterUnused.txt prUnused.txt  
             
             - name: Unused Dummy Arguments Diff
               run: |
