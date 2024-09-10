@@ -29,8 +29,8 @@ jobs:
             
             - name: Build
               run: |
-                (cd pr && /bin/bash mfc.sh build -j $(nproc) --debug > ../pr.txt 2>&1) 
-                (cd master && /bin/bash mfc.sh build -j $(nproc) --debug > ../master.txt 2>&1)
+                (cd pr && /bin/bash mfc.sh build -j $(nproc) --debug 2> ../pr.txt) 
+                (cd master && /bin/bash mfc.sh build -j $(nproc) --debug 2> ../master.txt)
                 sed -i '/\/pr\//d' pr.txt
                 sed -i '/\/master\//d' master.txt
             
@@ -38,7 +38,7 @@ jobs:
               run: |
                 grep -F 'Wunused-variable' master.txt -B 4 > mUnused.txt
                 grep -F 'Wunused-variable' pr.txt -B 4 > prUnused.txt
-                diff --changed-group-format='%<' --unchanged-group-format='' mUnused.txt prUnused.txt || true
+                diff --changed-group-format='%<' --unchanged-group-format='' prUnused.txt mUnused.txt || true
             
             - name: Unused Dummy Arguments Diff
               run: |
