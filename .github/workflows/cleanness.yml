@@ -36,7 +36,9 @@ jobs:
               run: |
                 grep -F 'Wunused-variable' master.txt > mUnused.txt
                 grep -F 'Wunused-variable' pr.txt > prUnused.txt
-                diff prUnused.txt mUnused.txt
+                sed -i '/\/pr\//d' prUnused.txt
+                sed -i '/\/master\//d' mUnused.txt
+                diff --changed-group-format='%<' --unchanged-group-format='' prUnused.txt mUnused.txt
             
             - name: Unused Dummy Arguments Diff
               run: |
