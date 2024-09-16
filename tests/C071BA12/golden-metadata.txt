@@ -1,10 +1,10 @@
-This file was created on 2024-09-13 14:30:40.448596.
+This file was created on 2024-09-16 09:35:45.596017.
 
 mfc.sh:
 
-    Invocation: test -j 8 -o Example -a --generate
+    Invocation: test -o Example --generate -j 8
     Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No
-    Git:        f2d33e06d2e58b796f8f5289fb649c93ef68ae88 on exampleCI2 (dirty)
+    Git:        b2de66e93f542f0cebc1056b98474a457f785949 on exampleCI2 (dirty)
 
 pre_process:
 
@@ -72,7 +72,7 @@ post_process:
         OMPI_CXX : 
         OMPI_FC  : 
 
-syscheck:
+simulation:
 
     CMake Configuration:
     
@@ -82,9 +82,9 @@ syscheck:
         Fortran : GNU v13.3.0 (/usr/bin/gfortran-13)
     
         PRE_PROCESS   : OFF
-        SIMULATION    : OFF
+        SIMULATION    : ON
         POST_PROCESS  : OFF
-        SYSCHECK      : ON
+        SYSCHECK      : OFF
         DOCUMENTATION : OFF
         ALL           : OFF
     
@@ -105,7 +105,7 @@ syscheck:
         OMPI_CXX : 
         OMPI_FC  : 
 
-simulation:
+syscheck:
 
     CMake Configuration:
     
@@ -115,9 +115,9 @@ simulation:
         Fortran : GNU v13.3.0 (/usr/bin/gfortran-13)
     
         PRE_PROCESS   : OFF
-        SIMULATION    : ON
+        SIMULATION    : OFF
         POST_PROCESS  : OFF
-        SYSCHECK      : OFF
+        SYSCHECK      : ON
         DOCUMENTATION : OFF
         ALL           : OFF
     
@@ -156,7 +156,7 @@ CPU:
     Core(s) per socket:                   4
     Socket(s):                            1
     Stepping:                             1
-    CPU(s) scaling MHz:                   50%
+    CPU(s) scaling MHz:                   51%
     CPU max MHz:                          4700.0000
     CPU min MHz:                          400.0000
     BogoMIPS:                             5608.00
