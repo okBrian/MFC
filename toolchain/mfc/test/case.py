@@ -218,8 +218,8 @@ print(json.dumps({{**case, **mods}}))
 
     def compute_tolerance(self) -> float:
 
-        if "Example" in self.trace.split(" -> "):
-            return 1e-4
+        # if "Example" in self.trace.split(" -> "):
+        #     return 1e-4
 
         if self.params.get("hypoelasticity", 'F') == 'T':
             return 1e-7

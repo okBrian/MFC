@@ -53,7 +53,6 @@ Variable n°{valIndex+1} (1-indexed) in {gFilepath} {msg}:
   - Error:       {error}
   - Tolerance:   {tol}
 """
-
             if math.isnan(gVal):
                 return raise_err("is NaN in the golden file")
 
@@ -63,5 +62,6 @@ Variable n°{valIndex+1} (1-indexed) in {gFilepath} {msg}:
             if not is_close(error, tol):
                 return raise_err("is not within tolerance")
 
+    print (avg_err.get())
     # Return the average relative error
     return avg_err.get(), None

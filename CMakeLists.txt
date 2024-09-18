@@ -20,6 +20,7 @@ option(MFC_MPI           "Build with MPI"                                     ON
 option(MFC_OpenACC       "Build with OpenACC"                                OFF)
 option(MFC_GCov          "Build with GCov"                                   OFF)
 option(MFC_Unified       "Build with unified CPU & GPU memory (GH-200 only)" OFF)
+option(MFC_strict        "Build with strict floating point operations"       OFF)
 option(MFC_PRE_PROCESS   "Build pre_process"                                 OFF)
 option(MFC_SIMULATION    "Build simulation"                                  OFF)
 option(MFC_POST_PROCESS  "Build post_process"                                OFF)
@@ -136,6 +137,14 @@ if (CMAKE_Fortran_COMPILER_ID STREQUAL "GNU")
 	    )
     endif()
 
+    if (MFC_strict)
+        add_compile_options(
+            -ffloat-store
+            -frounding-math 
+            -fsignaling-nans
+        )
+    endif()
+
     if (CMAKE_Fortran_COMPILER_VERSION VERSION_GREATER 10)
         add_compile_options(
             $<$<COMPILE_LANGUAGE:Fortran>:-fallow-invalid-boz>
@@ -163,6 +172,16 @@ elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Cray")
         )
         add_link_options("SHELL: -K trap=fp" "SHELL: -G2")
     endif()
+    
+    if (MFC_strict) 
+        add_compile_options(
+            -h flex_mp=intolerant
+            -hp0 -hfp0
+            -h vector0
+            -fp0
+        )
+    endif()
+
 elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Flang")
     add_compile_options(
         $<$<COMPILE_LANGUAGE:Fortran>:-Mfreeform>
@@ -175,6 +194,10 @@ elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Intel")
     if (CMAKE_BUILD_TYPE STREQUAL "Debug")
         add_compile_options(-g -Og -traceback -debug)
     endif()
+
+    if (MFC_strict)
+        add_compile_options(-fp-strict)
+    endif()
 elseif ((CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC") OR (CMAKE_Fortran_COMPILER_ID STREQUAL "PGI"))
     add_compile_options(
         $<$<COMPILE_LANGUAGE:Fortran>:-Mfreeform>
@@ -186,11 +209,13 @@ elseif ((CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC") OR (CMAKE_Fortran_COMPILER_
     if (CMAKE_BUILD_TYPE STREQUAL "Debug")
         add_compile_options(
             $<$<COMPILE_LANGUAGE:Fortran>:-O0>
+            -C 
+            -g 
+            -O0 
+            -traceback 
+            -Minform=inform 
+            -Mbounds
         )
-    endif()
-
-    if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-        add_compile_options(-C -g -O0 -traceback -Minform=inform -Mbounds)
     endif()
 
     if (DEFINED ENV{MFC_CUDA_CC})
@@ -228,6 +253,10 @@ if (CMAKE_BUILD_TYPE STREQUAL "Release")
             message(STATUS "IPO / LTO is NOT available")
         endif()
     endif() 
+
+    if (MFC_strict)
+        add_compile_options(-Kieee)
+    endif()
 endif()
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
