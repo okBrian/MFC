@@ -202,7 +202,7 @@ elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Intel")
 
     if (MFC_Strict)
         # add_compile_options(-fp-model strict))
-        -O0
+        add_compile_options(-O0)
     endif()
 elseif ((CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC") OR (CMAKE_Fortran_COMPILER_ID STREQUAL "PGI"))
     add_compile_options(
@@ -262,7 +262,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "Release")
 
     if (MFC_Strict)
         # add_compile_options(-Kieee)
-        -O0
+        add_compile_options(-O0)
     endif()
 endif()
 
