@@ -142,7 +142,6 @@ if (CMAKE_Fortran_COMPILER_ID STREQUAL "GNU")
             -ffloat-store
             -frounding-math 
             -fsignaling-nans
-            -fno-fast-math
         )
     endif()
 
@@ -176,11 +175,10 @@ elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Cray")
     
     if (MFC_Strict) 
         add_compile_options(
-            -h flex_mp=intolerant
-            -hp0 -hfp0
-            -h vector0
-            -fp0
-            # -O0
+            "SHELL:-h flex_mp=intolerant"
+            "SHELL:-hp0" "SHELL:-hfp0"
+            "SHELL:-h vector0"
+            "SHELL:-fp0"
         )
     endif()
 
@@ -198,8 +196,7 @@ elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Intel")
     endif()
 
     if (MFC_Strict)
-        add_compile_options(-fp-model strict)
-        # add_compile_options(-O0)
+        add_compile_options(-fp-strict)
     endif()
 elseif ((CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC") OR (CMAKE_Fortran_COMPILER_ID STREQUAL "PGI"))
     add_compile_options(
@@ -247,6 +244,11 @@ if (CMAKE_BUILD_TYPE STREQUAL "Release")
             message(STATUS "Performing IPO using -Mextract followed by -Minline")
             set(NVHPC_USE_TWO_PASS_IPO TRUE)
         endif()
+
+        if (MFC_Strict)
+            add_compile_options(-Kieee)
+        endif()
+
     else()
         CHECK_IPO_SUPPORTED(RESULT SUPPORTS_IPO OUTPUT IPO_ERROR)
         if (SUPPORTS_IPO)
@@ -256,10 +258,6 @@ if (CMAKE_BUILD_TYPE STREQUAL "Release")
             message(STATUS "IPO / LTO is NOT available")
         endif()
     endif() 
-
-    if (MFC_Strict)
-        add_compile_options(-Kieee)
-    endif()
 endif()
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
