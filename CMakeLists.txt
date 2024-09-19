@@ -142,7 +142,6 @@ if (CMAKE_Fortran_COMPILER_ID STREQUAL "GNU")
             -ffloat-store
             -frounding-math 
             -fsignaling-nans
-            -msse2
         )
     endif()
 
