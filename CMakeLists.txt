@@ -20,7 +20,7 @@ option(MFC_MPI           "Build with MPI"                                     ON
 option(MFC_OpenACC       "Build with OpenACC"                                OFF)
 option(MFC_GCov          "Build with GCov"                                   OFF)
 option(MFC_Unified       "Build with unified CPU & GPU memory (GH-200 only)" OFF)
-option(MFC_strict        "Build with strict floating point operations"       OFF)
+option(MFC_Strict        "Build with strict floating point operations"       OFF)
 option(MFC_PRE_PROCESS   "Build pre_process"                                 OFF)
 option(MFC_SIMULATION    "Build simulation"                                  OFF)
 option(MFC_POST_PROCESS  "Build post_process"                                OFF)
@@ -137,7 +137,7 @@ if (CMAKE_Fortran_COMPILER_ID STREQUAL "GNU")
 	    )
     endif()
 
-    if (MFC_strict)
+    if (MFC_Strict)
         add_compile_options(
             -ffloat-store
             -frounding-math 
