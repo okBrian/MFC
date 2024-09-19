@@ -142,6 +142,9 @@ if (CMAKE_Fortran_COMPILER_ID STREQUAL "GNU")
             -ffloat-store
             -frounding-math 
             -fsignaling-nans
+            -fexcess-precision=standard
+            -ffp-contract=off
+            -fno-fast-math
         )
     endif()
 
@@ -173,7 +176,7 @@ elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Cray")
         add_link_options("SHELL: -K trap=fp" "SHELL: -G2")
     endif()
     
-    if (MFC_strict) 
+    if (MFC_Strict) 
         add_compile_options(
             -h flex_mp=intolerant
             -hp0 -hfp0
@@ -195,8 +198,8 @@ elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Intel")
         add_compile_options(-g -Og -traceback -debug)
     endif()
 
-    if (MFC_strict)
-        add_compile_options(-fp-strict)
+    if (MFC_Strict)
+        add_compile_options(-fp-model strict))
     endif()
 elseif ((CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC") OR (CMAKE_Fortran_COMPILER_ID STREQUAL "PGI"))
     add_compile_options(
@@ -254,7 +257,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "Release")
         endif()
     endif() 
 
-    if (MFC_strict)
+    if (MFC_Strict)
         add_compile_options(-Kieee)
     endif()
 endif()
