@@ -1,10 +1,43 @@
-This file was created on 2024-09-19 11:22:20.273664.
+This file was created on 2024-09-19 13:18:50.427689.
 
 mfc.sh:
 
-    Invocation: test -j 8 --strict --generate -o Example
+    Invocation: test -j 8 -o Example --generate --strict
     Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No & strict=Yes
-    Git:        070d456874def93c76fd85db97bb3ca8847d28c0 on exampleCITest (dirty)
+    Git:        16fe53fc387eb72ed9bf264ec686cf8a24b5afb5 on exampleCITest (dirty)
+
+syscheck:
+
+    CMake Configuration:
+    
+        CMake v3.30.3 on bok
+    
+        C       : GNU v14.2.1 (/usr/bin/cc)
+        Fortran : GNU v14.2.1 (/usr/bin/gfortran)
+    
+        PRE_PROCESS   : OFF
+        SIMULATION    : OFF
+        POST_PROCESS  : OFF
+        SYSCHECK      : ON
+        DOCUMENTATION : OFF
+        ALL           : OFF
+    
+        MPI     : ON
+        OpenACC : OFF
+    
+        Fypp    : /home/bok/dev/MFC/build/venv/bin/fypp
+        Doxygen : 
+    
+        Build Type : Release
+    
+    Configuration Environment:
+    
+        CC       : /usr/bin/cc
+        CXX      : /usr/bin/c++
+        FC       : /usr/bin/gfortran
+        OMPI_CC  : 
+        OMPI_CXX : 
+        OMPI_FC  : 
 
 pre_process:
 
@@ -39,7 +72,7 @@ pre_process:
         OMPI_CXX : 
         OMPI_FC  : 
 
-simulation:
+post_process:
 
     CMake Configuration:
     
@@ -49,8 +82,8 @@ simulation:
         Fortran : GNU v14.2.1 (/usr/bin/gfortran)
     
         PRE_PROCESS   : OFF
-        SIMULATION    : ON
-        POST_PROCESS  : OFF
+        SIMULATION    : OFF
+        POST_PROCESS  : ON
         SYSCHECK      : OFF
         DOCUMENTATION : OFF
         ALL           : OFF
@@ -72,7 +105,7 @@ simulation:
         OMPI_CXX : 
         OMPI_FC  : 
 
-syscheck:
+simulation:
 
     CMake Configuration:
     
@@ -82,9 +115,9 @@ syscheck:
         Fortran : GNU v14.2.1 (/usr/bin/gfortran)
     
         PRE_PROCESS   : OFF
-        SIMULATION    : OFF
+        SIMULATION    : ON
         POST_PROCESS  : OFF
-        SYSCHECK      : ON
+        SYSCHECK      : OFF
         DOCUMENTATION : OFF
         ALL           : OFF
     
