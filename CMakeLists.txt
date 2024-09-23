@@ -139,11 +139,11 @@ if (CMAKE_Fortran_COMPILER_ID STREQUAL "GNU")
 
     if (MFC_Strict)
         add_compile_options(
-            -ffloat-store
-            -frounding-math 
-            -fsignaling-nans
-            -msse2
-            # -o0
+            # -ffloat-store
+            # -frounding-math 
+            # -fsignaling-nans
+            # -msse2
+            -O0
         )
     endif()
 
@@ -198,8 +198,8 @@ elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Intel")
     endif()
 
     if (MFC_Strict)
-        add_compile_options(-fp-model strict)
-        # add_compile_options(-o0)
+        # add_compile_options(-fp-model strict)
+        add_compile_options(-Od)
     endif()
 elseif ((CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC") OR (CMAKE_Fortran_COMPILER_ID STREQUAL "PGI"))
     add_compile_options(

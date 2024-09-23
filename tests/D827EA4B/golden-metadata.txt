@@ -1,10 +1,10 @@
-This file was created on 2024-09-23 01:03:35.271778.
+This file was created on 2024-09-23 04:38:19.624708.
 
 mfc.sh:
 
     Invocation: test -j 8 --generate -o Example
-    Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No & strict=No
-    Git:        2a227e3209751f3083b26b0a1ab1624e97ea4a43 on exampleCITest (dirty)
+    Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No & strict=Yes
+    Git:        8a37158b6e4c1ddb0e2fcc3f02b9af392915ddf9 on exampleCITest (dirty)
 
 pre_process:
 
@@ -19,6 +19,39 @@ pre_process:
         SIMULATION    : OFF
         POST_PROCESS  : OFF
         SYSCHECK      : OFF
+        DOCUMENTATION : OFF
+        ALL           : OFF
+    
+        MPI     : ON
+        OpenACC : OFF
+    
+        Fypp    : /home/bok/dev/MFC/build/venv/bin/fypp
+        Doxygen : 
+    
+        Build Type : Release
+    
+    Configuration Environment:
+    
+        CC       : /usr/bin/cc
+        CXX      : /usr/bin/c++
+        FC       : /usr/bin/gfortran
+        OMPI_CC  : 
+        OMPI_CXX : 
+        OMPI_FC  : 
+
+syscheck:
+
+    CMake Configuration:
+    
+        CMake v3.30.3 on bok
+    
+        C       : GNU v14.2.1 (/usr/bin/cc)
+        Fortran : GNU v14.2.1 (/usr/bin/gfortran)
+    
+        PRE_PROCESS   : OFF
+        SIMULATION    : OFF
+        POST_PROCESS  : OFF
+        SYSCHECK      : ON
         DOCUMENTATION : OFF
         ALL           : OFF
     
@@ -85,39 +118,6 @@ post_process:
         SIMULATION    : OFF
         POST_PROCESS  : ON
         SYSCHECK      : OFF
-        DOCUMENTATION : OFF
-        ALL           : OFF
-    
-        MPI     : ON
-        OpenACC : OFF
-    
-        Fypp    : /home/bok/dev/MFC/build/venv/bin/fypp
-        Doxygen : 
-    
-        Build Type : Release
-    
-    Configuration Environment:
-    
-        CC       : /usr/bin/cc
-        CXX      : /usr/bin/c++
-        FC       : /usr/bin/gfortran
-        OMPI_CC  : 
-        OMPI_CXX : 
-        OMPI_FC  : 
-
-syscheck:
-
-    CMake Configuration:
-    
-        CMake v3.30.3 on bok
-    
-        C       : GNU v14.2.1 (/usr/bin/cc)
-        Fortran : GNU v14.2.1 (/usr/bin/gfortran)
-    
-        PRE_PROCESS   : OFF
-        SIMULATION    : OFF
-        POST_PROCESS  : OFF
-        SYSCHECK      : ON
         DOCUMENTATION : OFF
         ALL           : OFF
     

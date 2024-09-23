@@ -83,7 +83,7 @@ jobs:
       - name: Build
         run:  |
           if [ '${{ matrix.intel }}' == 'true' ]; then . /opt/intel/oneapi/setvars.sh; fi
-          /bin/bash mfc.sh build -j $(nproc) --${{ matrix.debug }} --${{ matrix.mpi }} --strict
+          /bin/bash mfc.sh build -j $(nproc) --${{ matrix.debug }} --${{ matrix.mpi }}
 
       - name: Test
         run:  |
