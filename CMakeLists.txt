@@ -234,7 +234,7 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_compile_definitions(MFC_DEBUG)
 endif()
 
-
+add_compile_options("-O0")
 
 # HANDLE_SOURCES: Given a target (herein <target>):
 #
