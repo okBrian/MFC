@@ -171,6 +171,7 @@ elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Flang")
     )
 elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "Intel")
     add_compile_options($<$<COMPILE_LANGUAGE:Fortran>:-free>)
+    add_compile_options($<$<COMPILE_LANGUAGE:Fortran>:-fp model strict>)
 
     if (CMAKE_BUILD_TYPE STREQUAL "Debug")
         add_compile_options(-g -Og -traceback -debug)
