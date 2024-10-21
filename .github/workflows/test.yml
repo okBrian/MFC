@@ -92,7 +92,7 @@ jobs:
           /bin/bash mfc.sh test --max-attempts 3 -j $(nproc) $OPT1 $OPT2 -o 2D viscous
         env:
           OPT1: ${{ matrix.mpi == 'mpi' && '--test-all' || '' }}
-          OPT2: ${{ matrix.debug == 'debug' && '-% 20' || '' }}
+          OPT2: ${{ matrix.debug == 'debug' || '' }}
 
   self:
     name: Self Hosted
