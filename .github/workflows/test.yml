@@ -84,12 +84,12 @@ jobs:
       - name: Build
         run:  |
           if [ '${{ matrix.intel }}' == 'true' ]; then . /opt/intel/oneapi/setvars.sh; fi
-          /bin/bash mfc.sh build --strict -j $(nproc) --${{ matrix.debug }} --${{ matrix.mpi }} -o 2D viscous
+          /bin/bash mfc.sh build --strict -j $(nproc) --${{ matrix.debug }} --${{ matrix.mpi }}
 
       - name: Test
         run:  |
           if [ '${{ matrix.intel }}' == 'true' ]; then . /opt/intel/oneapi/setvars.sh; fi
-          /bin/bash mfc.sh test --max-attempts 3 -j $(nproc) $OPT1 $OPT2
+          /bin/bash mfc.sh test --max-attempts 3 -j $(nproc) $OPT1 $OPT2 -o 2D viscous
         env:
           OPT1: ${{ matrix.mpi == 'mpi' && '--test-all' || '' }}
           OPT2: ${{ matrix.debug == 'debug' && '-% 20' || '' }}
