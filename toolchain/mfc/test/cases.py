@@ -727,10 +727,10 @@ def list_cases() -> typing.List[TestCaseBuilder]:
             if path == "scaling":
                 continue
 
-            # # List of currently broken examples -> currently attempting to fix!
-            brokenCases = ["2D_ibm_cfl_dt", "1D_sodHypo", "2D_viscous", "2D_laplace_pressure_jump", "2D_bubbly_steady_shock", "2D_advection", "2D_hardcodied_ic", "2D_ibm_multiphase"]
-            if path in brokenCases:
-                continue
+            # # # List of currently broken examples -> currently attempting to fix!
+            # brokenCases = ["2D_ibm_cfl_dt", "1D_sodHypo", "2D_viscous", "2D_laplace_pressure_jump", "2D_bubbly_steady_shock", "2D_advection", "2D_hardcodied_ic", "2D_ibm_multiphase"]
+            # if path in brokenCases:
+            #     continue
             name = f"{path.split('_')[0]} -> Example -> {'_'.join(path.split('_')[1:])}"
             path = os.path.join(common.MFC_EXAMPLE_DIRPATH, path, "case.py")
             if not os.path.isfile(path):
@@ -742,18 +742,18 @@ def list_cases() -> typing.List[TestCaseBuilder]:
                     case['t_step_stop'] = 50
                     case['t_step_save'] = 50
 
-                caseSize = case['m'] * max(case['n'], 1) * max(case['p'], 1)
-                if caseSize > 625:
-                    if case['n'] == 0 and case['p'] == 0:
-                        case['m'] = 625
-                    elif case['p'] == 0:
-                        case['m'] = 25
-                        case['n'] = 25
-                    # m, n, p < 25 causes errors
-                    elif caseSize > 15625:
-                        case['m'] = 25
-                        case['n'] = 25
-                        case['p'] = 25
+                # caseSize = case['m'] * max(case['n'], 1) * max(case['p'], 1)
+                # if caseSize > 625:
+                #     if case['n'] == 0 and case['p'] == 0:
+                #         case['m'] = 625
+                #     elif case['p'] == 0:
+                #         case['m'] = 25
+                #         case['n'] = 25
+                #     # m, n, p < 25 causes errors
+                #     elif caseSize > 15625:
+                #         case['m'] = 25
+                #         case['n'] = 25
+                #         case['p'] = 25
 
 
             cases.append(define_case_f(name, path, [], {}, functor=modify_example_case))
