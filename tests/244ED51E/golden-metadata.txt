@@ -1,12 +1,12 @@
-This file was created on 2024-10-28 00:14:44.887145.
+This file was created on 2024-11-05 15:07:38.056056.
 
 mfc.sh:
 
-    Invocation: test -j 8 --generate -o Example
+    Invocation: test -j 8 -o sodHypo --generate
     Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No
-    Git:        c4db9d6115600594c86f7cc2d14a14a7e61e7414 on exampleCI2 (dirty)
+    Git:        4f4417b6de6cd4f8278673cf3f583b69a574ea76 on phoenix (dirty)
 
-syscheck:
+post_process:
 
     CMake Configuration:
     
@@ -17,8 +17,8 @@ syscheck:
     
         PRE_PROCESS   : OFF
         SIMULATION    : OFF
-        POST_PROCESS  : OFF
-        SYSCHECK      : ON
+        POST_PROCESS  : ON
+        SYSCHECK      : OFF
         DOCUMENTATION : OFF
         ALL           : OFF
     
@@ -72,7 +72,7 @@ pre_process:
         OMPI_CXX : 
         OMPI_FC  : 
 
-post_process:
+syscheck:
 
     CMake Configuration:
     
@@ -83,8 +83,8 @@ post_process:
     
         PRE_PROCESS   : OFF
         SIMULATION    : OFF
-        POST_PROCESS  : ON
-        SYSCHECK      : OFF
+        POST_PROCESS  : OFF
+        SYSCHECK      : ON
         DOCUMENTATION : OFF
         ALL           : OFF
     
@@ -156,7 +156,7 @@ CPU:
     Core(s) per socket:                   4
     Socket(s):                            1
     Stepping:                             1
-    CPU(s) scaling MHz:                   68%
+    CPU(s) scaling MHz:                   63%
     CPU max MHz:                          4700.0000
     CPU min MHz:                          400.0000
     BogoMIPS:                             5608.00

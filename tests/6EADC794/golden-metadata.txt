@@ -1,10 +1,10 @@
-This file was created on 2024-11-04 13:57:39.727111.
+This file was created on 2024-11-05 15:06:37.257179.
 
 mfc.sh:
 
-    Invocation: test -j 8 --generate -o laplace_pressure_jump
+    Invocation: test -j 8 -o laplace_pressure_jump --generate
     Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No
-    Git:        2127c1bd6378fe9da5f7a8f0c439388fad023f91 on phoenix (dirty)
+    Git:        4f4417b6de6cd4f8278673cf3f583b69a574ea76 on phoenix (dirty)
 
 pre_process:
 
@@ -156,7 +156,7 @@ CPU:
     Core(s) per socket:                   4
     Socket(s):                            1
     Stepping:                             1
-    CPU(s) scaling MHz:                   48%
+    CPU(s) scaling MHz:                   69%
     CPU max MHz:                          4700.0000
     CPU min MHz:                          400.0000
     BogoMIPS:                             5608.00

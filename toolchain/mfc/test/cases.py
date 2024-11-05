@@ -735,25 +735,27 @@ def list_cases() -> typing.List[TestCaseBuilder]:
             path = os.path.join(common.MFC_EXAMPLE_DIRPATH, path, "case.py")
             if not os.path.isfile(path):
                 continue
-            def modify_example_case(case: dict):
+            def modify_example_case(case: dict, name: str):
+                name = name.split('/')[-2]
+                ignore = ["2D_laplace_pressure_jump", "1D_sodHypo"]
                 case['parallel_io'] = 'F'
                 if 't_step_stop' in case and case['t_step_stop'] >= 50:
                     case['t_step_start'] = 0
                     case['t_step_stop'] = 50
                     case['t_step_save'] = 50
 
-                # caseSize = case['m'] * max(case['n'], 1) * max(case['p'], 1)
-                # if caseSize > 625:
-                #     if case['n'] == 0 and case['p'] == 0:
-                #         case['m'] = 625
-                #     elif case['p'] == 0:
-                #         case['m'] = 25
-                #         case['n'] = 25
-                #     # m, n, p < 25 causes errors
-                #     elif caseSize > 15625:
-                #         case['m'] = 25
-                #         case['n'] = 25
-                #         case['p'] = 25
+                caseSize = case['m'] * max(case['n'], 1) * max(case['p'], 1)
+                if caseSize > 25 * 25 and name not in ignore:
+                    if case['n'] == 0 and case['p'] == 0:
+                        case['m'] = 25 * 25
+                    elif case['p'] == 0:
+                        case['m'] = 25
+                        case['n'] = 25
+                    # m, n, p < 25 causes errors
+                    elif caseSize > 25 * 25 * 25:
+                        case['m'] = 25
+                        case['n'] = 25
+                        case['p'] = 25
 
 
             cases.append(define_case_f(name, path, [], {}, functor=modify_example_case))

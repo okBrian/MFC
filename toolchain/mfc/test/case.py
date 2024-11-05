@@ -267,7 +267,7 @@ class TestCaseBuilder:
         dictionary.update(self.mods)
 
         if self.functor:
-            self.functor(dictionary)
+            self.functor(dictionary, self.path)
 
         return TestCase(self.trace, dictionary, self.ppn)
 
