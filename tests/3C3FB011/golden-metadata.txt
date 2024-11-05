@@ -1,10 +1,10 @@
-This file was created on 2024-10-28 00:17:04.121567.
+This file was created on 2024-11-05 15:38:54.326651.
 
 mfc.sh:
 
-    Invocation: test -j 8 --generate -o Example
+    Invocation: test -j 8 -o hardcodied_ic --generate
     Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No
-    Git:        c4db9d6115600594c86f7cc2d14a14a7e61e7414 on exampleCI2 (dirty)
+    Git:        db9e4de0c38241d190abd50099b35551ce73451a on phoenix (dirty)
 
 syscheck:
 
@@ -156,7 +156,7 @@ CPU:
     Core(s) per socket:                   4
     Socket(s):                            1
     Stepping:                             1
-    CPU(s) scaling MHz:                   51%
+    CPU(s) scaling MHz:                   71%
     CPU max MHz:                          4700.0000
     CPU min MHz:                          400.0000
     BogoMIPS:                             5608.00
