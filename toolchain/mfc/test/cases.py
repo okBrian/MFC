@@ -737,7 +737,7 @@ def list_cases() -> typing.List[TestCaseBuilder]:
                 continue
             def modify_example_case(case: dict, name: str):
                 name = name.split('/')[-2]
-                ignore = ["2D_laplace_pressure_jump", "1D_sodHypo"]
+                ignore = ["2D_laplace_pressure_jump", "2D_advection"]
                 case['parallel_io'] = 'F'
                 if 't_step_stop' in case and case['t_step_stop'] >= 50:
                     case['t_step_start'] = 0
