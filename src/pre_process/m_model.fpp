@@ -919,6 +919,7 @@ contains
 
         ! Calculate the total number of vertices including interpolated ones
         total_vertices = 0
+        !$acc parallel loop collapse(2) gang vector default(present) private(tri, num_segments) 
         do i = 1, num_triangles
             do j = 1, 3
                 ! Get the coordinates of the two vertices of the current edge
@@ -965,6 +966,7 @@ contains
 
         ! Fill the new boundary vertices array with original and interpolated vertices
         total_vertices = 0
+        !$acc parallel loop collapse(2) gang vector default(present) private(tri, num_segments)
         do i = 1, num_triangles
             ! Loop through the 3 edges of each triangle
             do j = 1, 3
@@ -1063,6 +1065,7 @@ contains
         distance = 0._wp
 
         tri_idx = 0
+        !$acc parallel loop collapse(2) gang vector default(present) private(tri)
         do i = 1, model%ntrs
             do j = 1, 3
                 tri(j, 1) = model%trs(i)%v(j, 1)
