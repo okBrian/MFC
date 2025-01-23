@@ -2050,6 +2050,7 @@ contains
         end if
 
         ! Interpolate the STL model along the edges (2D) and on triangle facets (3D)
+        ! call 
         if (interpolate) then
             if (proc_rank == 0) then
                 print *, ' * Interpolating STL vertices.'
@@ -2089,6 +2090,7 @@ contains
         end if
 
         ncells = (m + 1)*(n + 1)*(p + 1)
+        !$acc kernels
         do i = 0, m; do j = 0, n; do k = 0, p
 
                     cell_num = i*(n + 1)*(p + 1) + j*(p + 1) + (k + 1)
@@ -2205,6 +2207,7 @@ contains
                         @:analytical()
                     end if
                 end do; end do; end do
+            !$acc end kernels
 
         if (proc_rank == 0) then
             print *, ""

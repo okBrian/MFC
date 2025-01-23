@@ -552,7 +552,9 @@ if (MFC_POST_PROCESS)
     MFC_SETUP_TARGET(TARGET  post_process
                      SOURCES "${post_process_SRCs}"
                      MPI SILO HDF5 FFTW OpenACC)
-
+    if(CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC")
+        target_compile_options(post_process PRIVATE $<$<COMPILE_LANGUAGE:Fortran>:-acc=multicore>)
+    endif()
     # -O0 is in response to https://github.com/MFlowCode/MFC-develop/issues/95
     target_compile_options(post_process PRIVATE -O0)
 endif()

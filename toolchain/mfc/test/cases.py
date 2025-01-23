@@ -902,7 +902,6 @@ def list_cases() -> typing.List[TestCaseBuilder]:
                 },
                 override_tol=1
             ))
-
     foreach_dimension()
 
     foreach_example()
