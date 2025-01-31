@@ -498,7 +498,7 @@ contains
         integer :: i, j, nInOrOut, nHits
 
         real(wp), dimension(1:spc, 1:3) :: ray_origins, ray_dirs
-
+        !$acc parallel loop gang vector default(present)
         do i = 1, spc
             call random_number(ray_origins(i, :))
             ray_origins(i, :) = point + (ray_origins(i, :) - 0.5_wp)*spacing(:)
@@ -919,7 +919,7 @@ contains
 
         ! Calculate the total number of vertices including interpolated ones
         total_vertices = 0
-        !$acc kernels
+        !$acc parallel loop gang vector default(present) private(tri, num_segments, model) 
         do i = 1, num_triangles
             do j = 1, 3
                 ! Get the coordinates of the two vertices of the current edge
@@ -960,14 +960,13 @@ contains
                 total_vertices = total_vertices + num_inner_vertices
             end if
         end do
-        !$acc end kernels
 
         ! Allocate memory for the new boundary vertices array
         allocate (interpolated_boundary_v(1:total_vertices, 1:3))
 
         ! Fill the new boundary vertices array with original and interpolated vertices
         total_vertices = 0
-        !$acc kernels
+        !$acc parallel loop gang vector default(present) private(tri, num_segments, model) 
         do i = 1, num_triangles
             do j = 1, 3
                 ! Get the coordinates of the two vertices of the current edge
@@ -1038,7 +1037,6 @@ contains
                 end do
             end if
         end do
-        !$acc end kernels
     end subroutine f_interpolate_3D
 
     !> This procedure determines the levelset distance and normals of the 3D models without interpolation.
@@ -1065,7 +1063,7 @@ contains
         distance = 0._wp
 
         tri_idx = 0
-        !$acc kernels
+        !$acc parallel loop gang vector default(present) private(tri, model) 
         do i = 1, model%ntrs
             do j = 1, 3
                 tri(j, 1) = model%trs(i)%v(j, 1)
@@ -1095,7 +1093,6 @@ contains
                 tri_idx = i
             end if
         end do
-        !$acc end kernels
         normals(1) = model%trs(tri_idx)%n(1)
         normals(2) = model%trs(tri_idx)%n(2)
         normals(3) = model%trs(tri_idx)%n(3)
