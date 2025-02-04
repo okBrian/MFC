@@ -1,24 +1,24 @@
-This file was created on 2024-11-22 02:59:11.930236.
+This file was created on 2025-02-04 11:39:56.808937.
 
 mfc.sh:
 
     Invocation: test -j 8 --generate -o Example
-    Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No
-    Git:        eb1524b7e9585bed8b4fff63f7a65061881ab20d on exampleCI2 (dirty)
+    Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No & single=No
+    Git:        5d38a3a78aec159305f294938726f4bbaf183e07 on CItest (dirty)
 
-syscheck:
+post_process:
 
     CMake Configuration:
     
-        CMake v3.31.0 on bok
+        CMake v3.31.5 on bok
     
         C       : GNU v14.2.1 (/usr/bin/cc)
         Fortran : GNU v14.2.1 (/usr/bin/gfortran)
     
         PRE_PROCESS   : OFF
         SIMULATION    : OFF
-        POST_PROCESS  : OFF
-        SYSCHECK      : ON
+        POST_PROCESS  : ON
+        SYSCHECK      : OFF
         DOCUMENTATION : OFF
         ALL           : OFF
     
@@ -43,7 +43,7 @@ pre_process:
 
     CMake Configuration:
     
-        CMake v3.31.0 on bok
+        CMake v3.31.5 on bok
     
         C       : GNU v14.2.1 (/usr/bin/cc)
         Fortran : GNU v14.2.1 (/usr/bin/gfortran)
@@ -72,19 +72,19 @@ pre_process:
         OMPI_CXX : 
         OMPI_FC  : 
 
-simulation:
+syscheck:
 
     CMake Configuration:
     
-        CMake v3.31.0 on bok
+        CMake v3.31.5 on bok
     
         C       : GNU v14.2.1 (/usr/bin/cc)
         Fortran : GNU v14.2.1 (/usr/bin/gfortran)
     
         PRE_PROCESS   : OFF
-        SIMULATION    : ON
+        SIMULATION    : OFF
         POST_PROCESS  : OFF
-        SYSCHECK      : OFF
+        SYSCHECK      : ON
         DOCUMENTATION : OFF
         ALL           : OFF
     
@@ -105,18 +105,18 @@ simulation:
         OMPI_CXX : 
         OMPI_FC  : 
 
-post_process:
+simulation:
 
     CMake Configuration:
     
-        CMake v3.31.0 on bok
+        CMake v3.31.5 on bok
     
         C       : GNU v14.2.1 (/usr/bin/cc)
         Fortran : GNU v14.2.1 (/usr/bin/gfortran)
     
         PRE_PROCESS   : OFF
-        SIMULATION    : OFF
-        POST_PROCESS  : ON
+        SIMULATION    : ON
+        POST_PROCESS  : OFF
         SYSCHECK      : OFF
         DOCUMENTATION : OFF
         ALL           : OFF
@@ -156,7 +156,7 @@ CPU:
     Core(s) per socket:                   4
     Socket(s):                            1
     Stepping:                             1
-    CPU(s) scaling MHz:                   53%
+    CPU(s) scaling MHz:                   46%
     CPU max MHz:                          4700.0000
     CPU min MHz:                          400.0000
     BogoMIPS:                             5608.00
