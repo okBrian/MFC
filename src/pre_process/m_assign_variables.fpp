@@ -103,7 +103,6 @@ contains
         !! @param patch_id_fp Array to track patch ids
     subroutine s_assign_patch_mixture_primitive_variables(patch_id, j, k, l, &
                                                           eta, q_prim_vf, patch_id_fp)
-        !$acc routine seq
 
         integer, intent(in) :: patch_id
         integer, intent(in) :: j, k, l
@@ -122,8 +121,6 @@ contains
 
         integer :: smooth_patch_id
         integer :: i !< generic loop operator
-
-        real(wp) :: sum, term !< Chemistry Terms
 
         ! Assigning the mixture primitive variables of a uniform state patch
 
@@ -165,6 +162,8 @@ contains
 
         ! Species Concentrations
         if (chemistry) then
+            block
+                real(wp) :: sum, term
 
                 ! Accumulating the species concentrations
                 sum = 0._wp
@@ -184,6 +183,7 @@ contains
                         q_prim_vf(chemxb + i - 1)%sf(j, k, l)/sum
                     Ys(i) = q_prim_vf(chemxb + i - 1)%sf(j, k, l)
                 end do
+            end block
         end if
 
         ! Updating the patch identities bookkeeping variable
@@ -282,7 +282,6 @@ contains
         !! @param patch_id_fp Array to track patch ids
     subroutine s_assign_patch_species_primitive_variables(patch_id, j, k, l, &
                                                           eta, q_prim_vf, patch_id_fp)
-        !$acc routine seq
 
         integer, intent(in) :: patch_id
         integer, intent(in) :: j, k, l
@@ -320,8 +319,6 @@ contains
 
         integer :: i  !< Generic loop iterator
         integer :: smooth_patch_id
-
-        real(wp) :: sum, term !< For Chemistry
 
         ! Transferring the identity of the smoothing patch
         smooth_patch_id = patch_icpp(patch_id)%smooth_patch_id
@@ -559,6 +556,8 @@ contains
 
         ! Species Concentrations
         if (chemistry) then
+            block
+                real(wp) :: sum, term
 
                 ! Accumulating the species concentrations
                 sum = 0._wp
@@ -580,6 +579,7 @@ contains
                         q_prim_vf(chemxb + i - 1)%sf(j, k, l)/sum
                     Ys(i) = q_prim_vf(chemxb + i - 1)%sf(j, k, l)
                 end do
+            end block
         end if
 
         ! Set streamwise velocity to hyperbolic tangent function of y

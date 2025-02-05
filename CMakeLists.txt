@@ -546,6 +546,9 @@ if (MFC_SIMULATION)
     MFC_SETUP_TARGET(TARGET  simulation
                      SOURCES "${simulation_SRCs}"
                      MPI OpenACC FFTW)
+                    if(CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC")
+                        target_compile_options(simulation PRIVATE $<$<COMPILE_LANGUAGE:Fortran>:-acc=multicore>)
+                    endif()
 endif()
 
 if (MFC_POST_PROCESS)

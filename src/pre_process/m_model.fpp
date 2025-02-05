@@ -498,7 +498,7 @@ contains
         integer :: i, j, nInOrOut, nHits
 
         real(wp), dimension(1:spc, 1:3) :: ray_origins, ray_dirs
-        !$acc parallel loop gang vector default(present)
+        !$acc parallel loop gang vector default(present), private(ray_origins, ray_dirs)
         do i = 1, spc
             call random_number(ray_origins(i, :))
             ray_origins(i, :) = point + (ray_origins(i, :) - 0.5_wp)*spacing(:)
@@ -509,6 +509,7 @@ contains
         end do
 
         nInOrOut = 0
+        !$acc parallel loop gang vector default(present), private(ray_origins, ray_dirs)
         do i = 1, spc
             ray%o = ray_origins(i, :)
             ray%d = ray_dirs(i, :)
@@ -919,7 +920,6 @@ contains
 
         ! Calculate the total number of vertices including interpolated ones
         total_vertices = 0
-        !$acc parallel loop gang vector default(present) private(tri, num_segments, model) 
         do i = 1, num_triangles
             do j = 1, 3
                 ! Get the coordinates of the two vertices of the current edge
@@ -966,7 +966,6 @@ contains
 
         ! Fill the new boundary vertices array with original and interpolated vertices
         total_vertices = 0
-        !$acc parallel loop gang vector default(present) private(tri, num_segments, model) 
         do i = 1, num_triangles
             do j = 1, 3
                 ! Get the coordinates of the two vertices of the current edge

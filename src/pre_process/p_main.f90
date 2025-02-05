@@ -22,7 +22,6 @@ program p_main
     call s_initialize_mpi_domain()
 
     ! Initialization of the MPI environment
-
     call s_initialize_modules()
 
     call s_read_grid()
