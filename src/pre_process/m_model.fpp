@@ -498,7 +498,7 @@ contains
         integer :: i, j, nInOrOut, nHits
 
         real(wp), dimension(1:spc, 1:3) :: ray_origins, ray_dirs
-        !$acc parallel loop gang vector default(present), private(ray_origins, ray_dirs)
+        !$acc parallel loop gang vector default(present)
         do i = 1, spc
             call random_number(ray_origins(i, :))
             ray_origins(i, :) = point + (ray_origins(i, :) - 0.5_wp)*spacing(:)
@@ -509,7 +509,7 @@ contains
         end do
 
         nInOrOut = 0
-        !$acc parallel loop gang vector default(present), private(ray_origins, ray_dirs)
+        !$acc parallel loop gang vector default(present) reduction(+:nInOrOut)
         do i = 1, spc
             ray%o = ray_origins(i, :)
             ray%d = ray_dirs(i, :)
@@ -1062,7 +1062,7 @@ contains
         distance = 0._wp
 
         tri_idx = 0
-        !$acc parallel loop gang vector default(present) private(tri, model) 
+        !$acc parallel loop gang vector default(present) reduction(min:dist_min, dist_min_normal)
         do i = 1, model%ntrs
             do j = 1, 3
                 tri(j, 1) = model%trs(i)%v(j, 1)
@@ -1118,6 +1118,8 @@ contains
         real(wp) :: distance
 
         distance = 0._wp
+        
+        !$acc parallel loop gang vector default(present)
         do i = 1, boundary_edge_count
             dist_buffer1 = sqrt((point(1) - boundary_v(i, 1, 1))**2 + &
                                 & (point(2) - boundary_v(i, 1, 2))**2)
@@ -1154,6 +1156,7 @@ contains
         dist_min = initial_distance_buffer
         idx_buffer = 0
 
+        !$acc parallel loop gang vector default(present) private(midp) reduction(min:dist_min)
         do i = 1, boundary_edge_count
             midp(1) = (boundary_v(i, 2, 1) + boundary_v(i, 1, 1))/2
             midp(2) = (boundary_v(i, 2, 2) + boundary_v(i, 1, 2))/2
@@ -1194,6 +1197,7 @@ contains
         dist_buffer = initial_distance_buffer
         min_dist = initial_distance_buffer
 
+        !$acc parallel loop gang vector default(present) reduction(min:min_dist)
         do i = 1, total_vertices
             dist_buffer = sqrt((point(1) - interpolated_boundary_v(i, 1))**2 + &
                                (point(2) - interpolated_boundary_v(i, 2))**2 + &

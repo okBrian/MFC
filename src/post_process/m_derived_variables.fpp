@@ -126,6 +126,7 @@ contains
         integer :: i, j, k !< Generic loop iterators
 
         ! Computing specific heat ratio from specific heat ratio function
+        !$acc parallel loop collapse(3) gang vector default(present)
         do k = -offset_z%beg, p + offset_z%end
             do j = -offset_y%beg, n + offset_y%end
                 do i = -offset_x%beg, m + offset_x%end
@@ -154,6 +155,7 @@ contains
 
         ! Calculating the values of the liquid stiffness from those of the
         ! specific heat ratio function and the liquid stiffness function
+        !$acc parallel loop collapse(3) gang vector default(present)
         do k = -offset_z%beg, p + offset_z%end
             do j = -offset_y%beg, n + offset_y%end
                 do i = -offset_x%beg, m + offset_x%end
@@ -190,6 +192,7 @@ contains
 
         ! Computing speed of sound values from those of pressure, density,
         ! specific heat ratio function and the liquid stiffness function
+        !$acc parallel loop collapse(3) gang vector default(present)
         do k = -offset_z%beg, p + offset_z%end
             do j = -offset_y%beg, n + offset_y%end
                 do i = -offset_x%beg, m + offset_x%end
@@ -242,6 +245,7 @@ contains
         real(wp) :: top, bottom, slope !< Flux limiter calcs
         integer :: j, k, l !< Generic loop iterators
 
+        !$acc parallel loop collapse(3) gang vector default(present)
         do l = -offset_z%beg, p + offset_z%end
             do k = -offset_y%beg, n + offset_y%end
                 do j = -offset_x%beg, m + offset_x%end
@@ -398,7 +402,6 @@ contains
                     do j = -offset_x%beg, m + offset_x%end
 
                         q_sf(j, k, l) = 0._wp
-
                         do r = -fd_number, fd_number
                             if (grid_geometry == 3) then
                                 q_sf(j, k, l) = &
@@ -493,7 +496,6 @@ contains
 
         real(wp) :: trS, trS2, trO2, Q, IIS
         integer :: j, k, l, r, jj, kk !< Generic loop iterators
-
         do l = -offset_z%beg, p + offset_z%end
             do k = -offset_y%beg, n + offset_y%end
                 do j = -offset_x%beg, m + offset_x%end
