@@ -498,7 +498,6 @@ contains
         integer :: i, j, nInOrOut, nHits
 
         real(wp), dimension(1:spc, 1:3) :: ray_origins, ray_dirs
-        !$acc parallel loop gang vector default(present)
         do i = 1, spc
             call random_number(ray_origins(i, :))
             ray_origins(i, :) = point + (ray_origins(i, :) - 0.5_wp)*spacing(:)
@@ -509,7 +508,6 @@ contains
         end do
 
         nInOrOut = 0
-        !$acc parallel loop gang vector default(present) reduction(+:nInOrOut)
         do i = 1, spc
             ray%o = ray_origins(i, :)
             ray%d = ray_dirs(i, :)
