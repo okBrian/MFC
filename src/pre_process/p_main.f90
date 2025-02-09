@@ -10,8 +10,6 @@ program p_main
 
     use m_start_up
 
-    use m_nvtx
-
     implicit none
 
     integer :: i
