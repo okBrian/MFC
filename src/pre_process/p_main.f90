@@ -10,6 +10,8 @@ program p_main
 
     use m_start_up
 
+    use m_mpi_common
+
     implicit none
 
     integer :: i
@@ -20,14 +22,13 @@ program p_main
     call random_seed()
 
     call s_initialize_mpi_domain()
-
     ! Initialization of the MPI environment
     call s_initialize_modules()
 
     call s_read_grid()
 
     allocate (proc_time(0:num_procs - 1))
-
+    call mpi_bcast_time_step_values(proc_time, time_avg)
     call s_apply_initial_condition(start, finish, proc_time, time_avg, time_final, file_exists)
 
     time_avg = abs(finish - start)

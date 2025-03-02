@@ -1975,12 +1975,14 @@ contains
         real(wp), allocatable, dimension(:, :) :: interpolated_boundary_v !< Interpolated vertex buffer
         real(wp) :: distance !< Levelset distance buffer
         logical :: interpolate !< Logical variable to determine whether or not the model should be interpolated
-
+        ! real(wp) :: start, finish, time_avg
         integer :: i, j, k !< Generic loop iterators
 
         type(t_bbox) :: bbox, bbox_old
         type(t_model) :: model
         type(ic_model_parameters) :: params
+        integer :: count
+        real(wp) :: time_avg, total_time
 
         t_vec3 :: point, model_center
 
@@ -2090,6 +2092,20 @@ contains
         end if
 
         ncells = (m + 1)*(n + 1)*(p + 1)
+        ! ! call cpu_time(start)
+        ! Loop carried dependence due to exposed use of point(:),patch_icpp(:),patch_ib(:),normals(:) prevents parallelization
+        ! Complex loop carried dependence of stl_levelset%sf$p,point,cart,normals,stl_levelset_norm%sf$p prevents parallelization
+        ! Parallelization would require privatization of array cart(:)
+        ! Complex loop carried dependence of point prevents parallelization
+        ! Loop carried dependence due to exposed use of patch_icpp(:) prevents parallelization
+        ! Complex loop carried dependence of stl_levelset%sf$p prevents parallelization
+        ! Parallelization would require privatization of array cart(:)
+        ! Loop carried dependence due to exposed use of normals(:),patch_ib(:) prevents parallelization
+        ! Loop carried dependence of stl_levelset%sf$p prevents parallelization
+        ! Parallelization would require privatization of array cart(:)
+
+
+
         do i = 0, m; do j = 0, n; do k = 0, p
 
                     cell_num = i*(n + 1)*(p + 1) + j*(p + 1) + (k + 1)
@@ -2109,9 +2125,13 @@ contains
                     end if
 
                     if (present(ib)) then
-                        eta = f_model_is_inside(model, point, (/dx, dy, dz/), patch_ib(patch_id)%model_spc)
+                        eta = f_model_is_inside(model, point, (/dx, dy, dz/), patch_ib(patch_id)%model_spc, time_avg)
+                        count = count + 1
+                        total_time = total_time + time_avg
                     else
-                        eta = f_model_is_inside(model, point, (/dx, dy, dz/), patch_icpp(patch_id)%model_spc)
+                        eta = f_model_is_inside(model, point, (/dx, dy, dz/), patch_icpp(patch_id)%model_spc, time_avg)
+                        count = count + 1
+                        total_time = total_time + time_avg
                     end if
 
                     if (present(ib)) then
@@ -2206,6 +2226,11 @@ contains
                         @:analytical()
                     end if
                 end do; end do; end do
+
+        ! call cpu_time(finish)
+        ! time_avg = abs(finish - start)
+        total_time = total_time / count
+        print *, "Total Time Average: ", total_time 
 
         if (proc_rank == 0) then
             print *, ""

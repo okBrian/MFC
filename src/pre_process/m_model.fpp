@@ -485,12 +485,13 @@ contains
     !! @param spacing  Space around the point to search in (grid spacing).
     !! @param spc      Number of samples per cell.
     !! @return True if the point is inside the octree, false otherwise.
-    function f_model_is_inside(model, point, spacing, spc) result(fraction)
+    function f_model_is_inside(model, point, spacing, spc, time_avg) result(fraction)
 
         type(t_model), intent(in) :: model
         t_vec3, intent(in) :: point
         t_vec3, intent(in) :: spacing
         integer, intent(in) :: spc
+        real(wp) :: start, finish, time_avg
 
         real(wp) :: fraction
 
@@ -498,7 +499,9 @@ contains
         integer :: i, j, nInOrOut, nHits
 
         real(wp), dimension(1:spc, 1:3) :: ray_origins, ray_dirs
-        !$acc parallel loop gang vector
+
+        call cpu_time(start)
+        !$acc parallel loop gang vector 
         do i = 1, spc
             call random_number(ray_origins(i, :))
             ray_origins(i, :) = point + (ray_origins(i, :) - 0.5_wp)*spacing(:)
@@ -509,11 +512,13 @@ contains
         end do
 
         nInOrOut = 0
+        $acc parallel loop gang vector reduction(+:nInorOut)
         do i = 1, spc
             ray%o = ray_origins(i, :)
             ray%d = ray_dirs(i, :)
 
             nHits = 0
+            !$acc loop reduction(+:nHits)
             do j = 1, model%ntrs
                 if (f_intersects_triangle(ray, model%trs(j))) then
                     nHits = nHits + 1
@@ -523,6 +528,8 @@ contains
             nInOrOut = nInOrOut + mod(nHits, 2)
         end do
 
+        call cpu_time(finish)
+        time_avg = abs(finish - start)
         fraction = real(nInOrOut)/real(spc)
 
     end function f_model_is_inside
