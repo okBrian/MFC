@@ -533,9 +533,12 @@ endfunction()
 if (MFC_PRE_PROCESS)
     MFC_SETUP_TARGET(TARGET  pre_process
                      SOURCES "${pre_process_SRCs}"
-                     MPI)
+                     MPI OpenACC)
     if(CMAKE_Fortran_COMPILER_ID STREQUAL "Cray")
         target_compile_options(pre_process PRIVATE -hfp0)
+    endif()
+    if(CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC")
+        target_compile_options(pre_process PRIVATE $<$<COMPILE_LANGUAGE:Fortran>:-acc=multicore>)
     endif()
 endif()
 
@@ -548,10 +551,13 @@ endif()
 if (MFC_POST_PROCESS)
     MFC_SETUP_TARGET(TARGET  post_process
                      SOURCES "${post_process_SRCs}"
-                     MPI SILO HDF5 FFTW)
+                     MPI SILO HDF5 FFTW OpenACC)
 
     # -O0 is in response to https://github.com/MFlowCode/MFC-develop/issues/95
     target_compile_options(post_process PRIVATE -O0)
+    if(CMAKE_Fortran_COMPILER_ID STREQUAL "NVHPC")
+        target_compile_options(post_process PRIVATE $<$<COMPILE_LANGUAGE:Fortran>:-acc=multicore>)
+    endif()
 endif()
 
 if (MFC_SYSCHECK)

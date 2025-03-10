@@ -2107,6 +2107,7 @@ contains
         end if
 
         ncells = (m + 1)*(n + 1)*(p + 1)
+        !$acc parallel loop collapse(3)
         do i = 0, m; do j = 0, n; do k = 0, p
 
                     cell_num = i*(n + 1)*(p + 1) + j*(p + 1) + (k + 1)
