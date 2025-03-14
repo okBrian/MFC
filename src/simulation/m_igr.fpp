@@ -712,7 +712,7 @@ contains
                                 qL_rs_vf(j+1,k,l,E_idx) + FL(j+1, k, l) ) + &
                                 0.5_wp* (rho_R * (qR_rs_vf(j,k,l,momxb)**2.0) + &
                                 qR_rs_vf(j,k,l,E_idx) + FR(j, k, l) ) + &
-                                0.5_wp*cfl * (qR_rs_vf(j, k, l, momxb)*rho_R  - qL_rs_vf(j+1, k, l, momxb)*rho_R )
+                                0.5_wp*cfl * (qR_rs_vf(j, k, l, momxb)*rho_R  - qL_rs_vf(j+1, k, l, momxb)*rho_L)
 
                             flux_vf(momxb+1)%sf(j, k, l) = &
                                 0.5_wp * rho_L * (qL_rs_vf(j+1,k,l,momxb)*qL_rs_vf(j+1,k,l,momxb+1)) + &
