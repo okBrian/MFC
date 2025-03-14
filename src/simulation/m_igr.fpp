@@ -552,7 +552,6 @@ contains
 
         if (p == 0) then
             cfl = max(sqrt(u_L**2._wp + v_L**2._wp), sqrt(u_R**2._wp + v_R**2._wp)) + max(a_L, a_R)
-            cfl = sqrt(u_L**2._wp + v_L**2._wp) + a_L
         else
             cfl = max(sqrt(u_L**2._wp + v_L**2._wp + w_L**2._wp), sqrt(u_R**2._wp + v_R**2._wp + w_R**2._wp)) + max(a_L, a_R)
         end if
