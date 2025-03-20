@@ -536,6 +536,8 @@ if (MFC_PRE_PROCESS)
                      MPI)
     if(CMAKE_Fortran_COMPILER_ID STREQUAL "Cray")
         target_compile_options(pre_process PRIVATE -hfp0)
+        find_package(hipfort COMPONENTS hip CONFIG REQUIRED)
+        target_link_libraries(pre_process PRIVATE hipfort::hip hipfort::hipfort-amdgcn)
     endif()
 endif()
 
@@ -543,12 +545,21 @@ if (MFC_SIMULATION)
     MFC_SETUP_TARGET(TARGET  simulation
                      SOURCES "${simulation_SRCs}"
                      MPI OpenACC FFTW)
+
+    if(CMAKE_Fortran_COMPILER_ID STREQUAL "Cray")
+        find_package(hipfort COMPONENTS hip CONFIG REQUIRED)
+        target_link_libraries(simulation PRIVATE hipfort::hip hipfort::hipfort-amdgcn)
+    endif()
 endif()
 
 if (MFC_POST_PROCESS)
     MFC_SETUP_TARGET(TARGET  post_process
                      SOURCES "${post_process_SRCs}"
                      MPI SILO HDF5 FFTW)
+    if(CMAKE_Fortran_COMPILER_ID STREQUAL "Cray")
+        find_package(hipfort COMPONENTS hip CONFIG REQUIRED)
+        target_link_libraries(post_process PRIVATE hipfort::hip hipfort::hipfort-amdgcn)
+    endif()
 
     # -O0 is in response to https://github.com/MFlowCode/MFC-develop/issues/95
     target_compile_options(post_process PRIVATE -O0)
