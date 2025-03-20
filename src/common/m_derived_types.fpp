@@ -14,7 +14,10 @@ module m_derived_types
 
     use m_precision_select
     use m_thermochem, only: num_species
+
+#if defined(MFC_OpenACC)
     use hipfort
+#endif
 
     implicit none
 
