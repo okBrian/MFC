@@ -12,6 +12,7 @@ module m_derived_types
 
     use m_precision_select
     use m_thermochem, only: num_species
+    use hipfort
 
     implicit none
 
@@ -69,6 +70,15 @@ module m_derived_types
     type vector_field
         type(scalar_field), allocatable, dimension(:) :: vf !< Vector field
     end type vector_field
+
+    type scalar_field_16
+        real(hipHalf), pointer, dimension(:, :, :) :: sf => null()
+    end type scalar_field_16
+
+    !> Derived type annexing a vector field (VF)
+    type vector_field_16
+        type(scalar_field_16), allocatable, dimension(:) :: vf !< Vector field
+    end type vector_field_16
 
     !> Integer bounds for variables
     type int_bounds_info

@@ -621,10 +621,10 @@ contains
 
     subroutine s_compute_rhs(q_cons_vf, q_T_sf, q_prim_vf, rhs_vf, pb, rhs_pb, mv, rhs_mv, t_step, time_avg)
 
-        type(scalar_field), dimension(sys_size), intent(inout) :: q_cons_vf
+        type(scalar_field_16), dimension(sys_size), intent(inout) :: q_cons_vf
         type(scalar_field), intent(inout) :: q_T_sf
         type(scalar_field), dimension(sys_size), intent(inout) :: q_prim_vf
-        type(scalar_field), dimension(sys_size), intent(inout) :: rhs_vf
+        type(scalar_field_16), dimension(sys_size), intent(inout) :: rhs_vf
         real(wp), dimension(startx:, starty:, startz:, 1:, 1:), intent(inout) :: pb, rhs_pb
         real(wp), dimension(startx:, starty:, startz:, 1:, 1:), intent(inout) :: mv, rhs_mv
         integer, intent(in) :: t_step

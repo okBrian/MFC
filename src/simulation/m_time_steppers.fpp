@@ -44,9 +44,11 @@ module m_time_steppers
 
     use m_body_forces
 
+    use hipfort
+
     implicit none
 
-    type(vector_field), allocatable, dimension(:) :: q_cons_ts !<
+    type(vector_field_16), allocatable, dimension(:) :: q_cons_ts !<
     !! Cell-average conservative variables at each time-stage (TS)
 
     type(scalar_field), allocatable, dimension(:) :: q_prim_vf !<
@@ -59,7 +61,7 @@ module m_time_steppers
     !! Cell-average RHS variables at each time-stage (TS)
     !! Adaptive 4th/5th order Runge—Kutta–Cash–Karp (RKCK) time stepper
 
-    type(vector_field), allocatable, dimension(:) :: q_prim_ts !<
+    type(vector_field_16), allocatable, dimension(:) :: q_prim_ts !<
     !! Cell-average primitive variables at consecutive TIMESTEPS
 
     real(wp), allocatable, dimension(:, :, :, :, :) :: rhs_pb
@@ -641,7 +643,7 @@ contains
                     do j = 0, m
                         q_cons_ts(2)%vf(i)%sf(j, k, l) = &
                             q_cons_ts(1)%vf(i)%sf(j, k, l) &
-                            + dt*rhs_vf(i)%sf(j, k, l)
+                            + hipConvertFloatToHalf(dt*rhs_vf(i)%sf(j, k, l))
                     end do
                 end do
             end do
