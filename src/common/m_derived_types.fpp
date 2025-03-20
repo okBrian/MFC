@@ -77,7 +77,7 @@ module m_derived_types
     end type vector_field
 
     type scalar_field_16
-        real(hipHalf), pointer, dimension(:, :, :) :: sf => null()
+        type(c_ptr), pointer, dimension(:, :, :) :: sf => null()
     end type scalar_field_16
 
     !> Derived type annexing a vector field (VF)

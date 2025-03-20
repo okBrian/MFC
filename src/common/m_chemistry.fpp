@@ -60,9 +60,10 @@ contains
 
     subroutine s_compute_chemistry_reaction_flux(rhs_vf, q_cons_qp, q_T_sf, q_prim_qp, bounds)
 
-        type(scalar_field), dimension(sys_size), intent(inout) :: rhs_vf
+        type(scalar_field_16), dimension(sys_size), intent(inout) :: rhs_vf
         type(scalar_field), intent(inout) :: q_T_sf
-        type(scalar_field), dimension(sys_size), intent(inout) :: q_cons_qp, q_prim_qp
+        type(scalar_field_16), dimension(sys_size), intent(inout) :: q_cons_qp
+        type(scalar_field), dimension(sys_size), intent(inout) :: q_prim_qp
         type(int_bounds_info), dimension(1:3), intent(in) :: bounds
 
         integer :: x, y, z

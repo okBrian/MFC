@@ -90,7 +90,7 @@ contains
 
         integer, intent(in) :: idir
         type(scalar_field), dimension(sys_size), intent(in) :: q_prim_vf
-        type(scalar_field), dimension(sys_size), intent(inout) :: rhs_vf
+        type(scalar_field_16), dimension(sys_size), intent(inout) :: rhs_vf
 
         real(wp) :: rho_K, G_K
 

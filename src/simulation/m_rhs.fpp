@@ -937,7 +937,7 @@ contains
                     do j = 0, m
                         if (ib_markers%sf(j, k, l) /= 0) then
                             do i = 1, sys_size
-                                rhs_vf(i)%sf(j, k, l) = 0._wp
+                                rhs_vf(i)%sf(j, k, l) = hipConvertFloatToHalf(0._wp)
                             end do
                         end if
                     end do
@@ -1003,8 +1003,8 @@ contains
     subroutine s_compute_advection_source_term(idir, rhs_vf, q_cons_vf, q_prim_vf, flux_src_n_vf)
 
         integer, intent(in) :: idir
-        type(scalar_field), dimension(sys_size), intent(inout) :: rhs_vf
-        type(vector_field), intent(inout) :: q_cons_vf
+        type(scalar_field_16), dimension(sys_size), intent(inout) :: rhs_vf
+        type(vector_field_16), intent(inout) :: q_cons_vf
         type(vector_field), intent(inout) :: q_prim_vf
         type(vector_field), intent(inout) :: flux_src_n_vf
 
@@ -1560,7 +1560,7 @@ contains
 
         integer, intent(in) :: idir
         type(scalar_field), dimension(sys_size), intent(in) :: q_prim_vf
-        type(scalar_field), dimension(sys_size), intent(inout) :: rhs_vf
+        type(scalar_field_16), dimension(sys_size), intent(inout) :: rhs_vf
         type(scalar_field), dimension(sys_size), intent(in) :: flux_src_n
         type(scalar_field), dimension(sys_size), intent(in) :: dq_prim_dx_vf, dq_prim_dy_vf, dq_prim_dz_vf
 

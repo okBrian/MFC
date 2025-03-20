@@ -1836,7 +1836,11 @@ contains
 
         type(scalar_field), &
             dimension(sys_size), &
-            intent(inout) :: q_prim_vf, flux_vf, rhs_vf
+            intent(inout) :: q_prim_vf, flux_vf
+
+        type(scalar_field_16), &
+            dimension(sys_size), &
+            intent(inout) :: rhs_vf
 
         integer, intent(in) :: idir
 
