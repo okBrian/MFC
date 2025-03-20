@@ -8,6 +8,8 @@
 !!              types used in the pre-process code.
 module m_derived_types
 
+    use, intrinsic :: iso_c_binding
+
     use m_constants  !< Constants
 
     use m_precision_select

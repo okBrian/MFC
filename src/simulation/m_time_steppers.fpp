@@ -12,6 +12,8 @@
 !!              where TVD designates a total-variation-diminishing time-stepper.
 module m_time_steppers
 
+    use, intrinsic :: iso_c_binding
+
     use m_derived_types        !< Definitions of the derived types
 
     use m_global_parameters    !< Definitions of the global parameters
@@ -44,7 +46,9 @@ module m_time_steppers
 
     use m_body_forces
 
+#if defined(MFC_OpenACC)
     use hipfort
+#endif
 
     implicit none
 
