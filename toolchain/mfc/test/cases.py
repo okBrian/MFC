@@ -1,3 +1,4 @@
+# pylint: disable=too-many-lines
 import os, typing, itertools
 
 from mfc   import common
@@ -70,7 +71,7 @@ def list_cases() -> typing.List[TestCaseBuilder]:
     stack, cases = CaseGeneratorStack(), []
 
     def alter_bcs(dimInfo):
-        for bc in [ -1, -2, -4, -5, -6, -7, -8, -9, -10, -11, -12, -3, -15, -16 ]:
+        for bc in [ -1, -2, -4, -5, -6, -7, -8, -9, -10, -11, -12, -3, -15, -16, -17]:
             cases.append(define_case_d(stack, f"bc={bc}", get_bc_mods(bc, dimInfo)))
 
     def alter_grcbc(dimInfo):
@@ -572,6 +573,17 @@ def list_cases() -> typing.List[TestCaseBuilder]:
 
             cases.append(define_case_d(stack, '', {}))
 
+            reflective_params = {'bc_x%beg': -2, 'bc_x%end': -2, 'bc_y%beg': -2, 'bc_y%end': -2}
+            if len(dimInfo[0]) == 3:
+                reflective_params.update({'bc_z%beg': -2, 'bc_z%end': -2})
+
+            if num_fluids == 1:
+                cases.append(define_case_d(stack, 'cont_damage', {'cont_damage': 'T', 'tau_star': 0.0, 'cont_damage_s': 2.0, 'alpha_bar': 1e-4}))
+                if len(dimInfo[0]) >= 2:
+                    cases.append(define_case_d(stack, 'bc=-2', reflective_params))
+                if len(dimInfo[0]) == 2:
+                    cases.append(define_case_d(stack, 'Axisymmetric', {**reflective_params, 'cyl_coord': 'T'}))
+
             stack.pop()
 
             if num_fluids == 2:
@@ -838,6 +850,77 @@ def list_cases() -> typing.List[TestCaseBuilder]:
 
         stack.pop()
 
+    def alter_bc_patches(dimInfo):
+       # BC_Patches
+
+        stack.push('BC Patches',{
+            'num_bc_patches': 1
+        })
+
+        if len(dimInfo[0]) > 2:
+            for direc in [1,2,3]:
+                stack.push('Circle' ,{
+                        'patch_bc(1)%geometry': 2, 'patch_bc(1)%dir': direc, 
+                        'patch_bc(1)%type': -17, 'patch_bc(1)%loc': -1
+                })
+
+                if direc==1:
+                    stack.push('X', {'patch_bc(1)%centroid(2)': 0,'patch_bc(1)%centroid(3)': 0, "patch_bc(1)%radius": 0.000125,})
+                elif direc==2:
+                    stack.push('Y', {'patch_bc(1)%centroid(1)': 0,'patch_bc(1)%centroid(3)': 0, "patch_bc(1)%radius": 0.000125,})
+                else:
+                    stack.push('Z', {'patch_bc(1)%centroid(1)': 0,'patch_bc(1)%centroid(2)': 0, "patch_bc(1)%radius": 0.000125,})
+
+
+                cases.append(define_case_d(stack, '', {}))
+
+                stack.pop()
+
+                stack.pop()
+
+        elif len(dimInfo[0]) > 1:
+            for direc in [1,2]:
+                stack.push('Line Segment' ,{
+                        'patch_bc(1)%geometry': 1, 'patch_bc(1)%dir': direc, 
+                        'patch_bc(1)%type': -17, 'patch_bc(1)%loc': -1
+                })
+
+                if direc==1:
+                    stack.push('X' ,{'patch_bc(1)%centroid(2)': 0.0, 'patch_bc(1)%length(2)': 0.0025})
+                else:
+                    stack.push('Y' ,{'patch_bc(1)%centroid(1)': 0.0, 'patch_bc(1)%length(1)': 0.0025})
+
+
+                cases.append(define_case_d(stack, '', {}))
+
+                stack.pop()
+
+                stack.pop()
+
+        stack.pop()
+
+    def mhd_cases():
+        params = {
+            '1D': {"m": 200, "dt": 0.001, "t_step_stop": 200, "t_step_save": 200},
+            '2D': {"m": 50, "n": 50, "dt": 0.002, "t_step_stop": 500, "t_step_save": 500},
+            '3D': {"m": 25, "n": 25, "p": 25, "dt": 0.005, "t_step_stop": 200, "t_step_save": 200},
+        }
+
+        case_specs = [
+            ("1D -> MHD -> HLL",    "examples/1D_brio_wu/case.py",              params['1D']),
+            ("1D -> MHD -> HLLD",   "examples/1D_brio_wu_hlld/case.py",         params['1D']),
+            ("1D -> RMHD",          "examples/1D_brio_wu_rmhd/case.py",         params['1D']),
+            ("2D -> MHD -> HLL",    "examples/2D_orszag_tang/case.py",          params['2D']),
+            ("2D -> MHD -> HLLD",   "examples/2D_orszag_tang/case.py",          {**params['2D'], 'riemann_solver': 4}),
+            ("2D -> MHD -> Powell", "examples/2D_orszag_tang_powell/case.py",   params['2D']),
+            ("2D -> RMHD",          "examples/2D_shock_cloud_rmhd/case.py",     params['2D']),
+            ("3D -> MHD",           "examples/3D_brio_wu/case.py",              params['3D']),
+            ("3D -> RMHD",          "examples/3D_brio_wu/case.py",              {**params['3D'], 'relativity': 'T'}),
+        ]
+
+        for name, path, param in case_specs:
+            cases.append(define_case_f(name, path, mods=param))
+
     def foreach_dimension():
         for dimInfo, dimParams in get_dimensions():
             stack.push(f"{len(dimInfo[0])}D", dimParams)
@@ -860,6 +943,7 @@ def list_cases() -> typing.List[TestCaseBuilder]:
             alter_elliptic_smoothing()
             alter_body_forces(dimInfo)
             alter_instability_wave(dimInfo)
+            alter_bc_patches(dimInfo)
             stack.pop()
             stack.pop()
 
@@ -925,6 +1009,8 @@ def list_cases() -> typing.List[TestCaseBuilder]:
             ))
 
     foreach_dimension()
+
+    mhd_cases()
 
     foreach_example()
 

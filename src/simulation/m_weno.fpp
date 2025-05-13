@@ -272,12 +272,12 @@ contains
                     ! any contributions from outside of the physical domain during
                     ! the WENO reconstruction
                     if (null_weights) then
-                        if (bc_s%beg == -4) then
+                        if (bc_s%beg == BC_RIEMANN_EXTRAPOLATION) then
                             d_cbR_${XYZ}$ (1, 0) = 0._wp; d_cbR_${XYZ}$ (0, 0) = 1._wp
                             d_cbL_${XYZ}$ (1, 0) = 0._wp; d_cbL_${XYZ}$ (0, 0) = 1._wp
                         end if
 
-                        if (bc_s%end == -4) then
+                        if (bc_s%end == BC_RIEMANN_EXTRAPOLATION) then
                             d_cbR_${XYZ}$ (0, s) = 0._wp; d_cbR_${XYZ}$ (1, s) = 1._wp
                             d_cbL_${XYZ}$ (0, s) = 0._wp; d_cbL_${XYZ}$ (1, s) = 1._wp
                         end if
@@ -418,14 +418,14 @@ contains
                     ! any contributions from outside of the physical domain during
                     ! the WENO reconstruction
                     if (null_weights) then
-                        if (bc_s%beg == -4) then
+                        if (bc_s%beg == BC_RIEMANN_EXTRAPOLATION) then
                             d_cbR_${XYZ}$ (1:2, 0) = 0._wp; d_cbR_${XYZ}$ (0, 0) = 1._wp
                             d_cbL_${XYZ}$ (1:2, 0) = 0._wp; d_cbL_${XYZ}$ (0, 0) = 1._wp
                             d_cbR_${XYZ}$ (2, 1) = 0._wp; d_cbR_${XYZ}$ (:, 1) = d_cbR_${XYZ}$ (:, 1)/sum(d_cbR_${XYZ}$ (:, 1))
                             d_cbL_${XYZ}$ (2, 1) = 0._wp; d_cbL_${XYZ}$ (:, 1) = d_cbL_${XYZ}$ (:, 1)/sum(d_cbL_${XYZ}$ (:, 1))
                         end if
 
-                        if (bc_s%end == -4) then
+                        if (bc_s%end == BC_RIEMANN_EXTRAPOLATION) then
                             d_cbR_${XYZ}$ (0, s - 1) = 0._wp; d_cbR_${XYZ}$ (:, s - 1) = d_cbR_${XYZ}$ (:, s - 1)/sum(d_cbR_${XYZ}$ (:, s - 1))
                             d_cbL_${XYZ}$ (0, s - 1) = 0._wp; d_cbL_${XYZ}$ (:, s - 1) = d_cbL_${XYZ}$ (:, s - 1)/sum(d_cbL_${XYZ}$ (:, s - 1))
                             d_cbR_${XYZ}$ (0:1, s) = 0._wp; d_cbR_${XYZ}$ (2, s) = 1._wp
@@ -853,9 +853,10 @@ contains
                                         ! Fu, et al. (2016)
                                         ! Fu''s code: https://dx.doi.org/10.13140/RG.2.2.36250.34247
                                         tau = abs(beta(2) - beta(0))
-                                        alpha = (1._wp + tau/beta)**6._wp           ! Equation 22 (reuse alpha as gamma; pick C=1 & q=6)
+                                        alpha = 1._wp + tau/beta                    ! Equation 22 (reuse alpha as gamma; pick C=1 & q=6)
+                                        alpha = (alpha*alpha*alpha)**2._wp          ! Equation 22 cont. (some CPU compilers cannot optimize x**6.0)
                                         omega = alpha/sum(alpha)                    ! Equation 25 (reuse omega as xi)
-                                        delta = merge(0._wp, 1._wp, omega < teno_CT)    ! Equation 26
+                                        delta = merge(0._wp, 1._wp, omega < teno_CT)! Equation 26
                                         alpha = delta*d_cbL_${XYZ}$ (:, j)          ! Equation 27
 
                                     end if
@@ -1036,7 +1037,8 @@ contains
 
                                     elseif (teno) then
                                         tau = abs(beta(4) - beta(3)) ! Note the reordering of stencils
-                                        alpha = (1._wp + tau/beta)**6._wp
+                                        alpha = 1._wp + tau/beta
+                                        alpha = (alpha*alpha*alpha)**2._wp ! some CPU compilers cannot optimize x**6.0
                                         omega = alpha/sum(alpha)
                                         delta = merge(0._wp, 1._wp, omega < teno_CT)
                                         alpha = delta*d_cbL_${XYZ}$ (:, j)
