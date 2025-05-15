@@ -100,6 +100,8 @@ PRE_PROCESS.update({
     'num_bc_patches': ParamType.INT,
     'viscous': ParamType.LOG,
     'bubbles_lagrange': ParamType.LOG,
+    'recon_type': ParamType.INT,
+    'muscl_order': ParamType.INT,
 })
 
 for ib_id in range(1, 10+1):
@@ -296,6 +298,7 @@ SIMULATION.update({
     'tau_star': ParamType.REAL,
     'cont_damage_s': ParamType.REAL,
     'alpha_bar': ParamType.REAL,
+    'recon_type': ParamType.INT,
 })
 
 for var in [ 'heatTransfer_model', 'massTransfer_model', 'pressure_corrector',
