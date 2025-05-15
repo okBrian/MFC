@@ -83,6 +83,7 @@ module m_global_parameters
     integer :: num_fluids            !< Number of different fluids present in the flow
     logical :: mpp_lim               !< Alpha limiter
     integer :: sys_size              !< Number of unknowns in the system of equations
+    integer :: recon_type            !< Reconstruction Type
     integer :: weno_polyn     !< Degree of the WENO polynomials (polyn)
     integer :: weno_order            !< Order of accuracy for the WENO reconstruction
     logical :: hypoelasticity        !< activate hypoelasticity
@@ -340,6 +341,7 @@ contains
         palpha_eps = dflt_real
         ptgalpha_eps = dflt_real
         num_fluids = dflt_int
+        recon_type = WENO_TYPE
         weno_order = dflt_int
 
         hypoelasticity = .false.

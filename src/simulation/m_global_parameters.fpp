@@ -110,6 +110,7 @@ module m_global_parameters
     logical :: prim_vars_wrt
 
     #:if MFC_CASE_OPTIMIZATION
+        integer, parameter :: recon_type = ${recon_type}$ !< Reconstruction type
         integer, parameter :: weno_polyn = ${weno_polyn}$ !< Degree of the WENO polynomials (polyn)
         integer, parameter :: weno_order = ${weno_order}$ !< Order of the WENO reconstruction
         integer, parameter :: weno_num_stencils = ${weno_num_stencils}$ !< Number of stencils for WENO reconstruction (only different from weno_polyn for TENO(>5))
@@ -122,6 +123,7 @@ module m_global_parameters
         logical, parameter :: mhd = (${mhd}$ /= 0)                  !< Magnetohydrodynamics
         logical, parameter :: relativity = (${relativity}$ /= 0)    !< Relativity (only for MHD)
     #:else
+        integer :: recon_type
         integer :: weno_polyn     !< Degree of the WENO polynomials (polyn)
         integer :: weno_order     !< Order of the WENO reconstruction
         integer :: weno_num_stencils    !< Number of stencils for WENO reconstruction (only different from weno_polyn for TENO(>5))
@@ -174,7 +176,7 @@ module m_global_parameters
     integer :: cpu_start, cpu_end, cpu_rate
 
     #:if not MFC_CASE_OPTIMIZATION
-        !$acc declare create(num_dims, num_vels, weno_polyn, weno_order, weno_num_stencils, num_fluids, wenojs, mapped_weno, wenoz, teno, wenoz_q, mhd, relativity)
+        !$acc declare create(num_dims, num_vels, recon_type, weno_polyn, weno_order, weno_num_stencils, num_fluids, wenojs, mapped_weno, wenoz, teno, wenoz_q, mhd, relativity)
     #:endif
 
     !$acc declare create(mpp_lim, model_eqns, mixture_err, alt_soundspeed, avg_state, mp_weno, weno_eps, teno_CT, hypoelasticity, hyperelasticity, hyper_model, elasticity, low_Mach, viscous, shear_stress, bulk_stress, cont_damage)
@@ -578,6 +580,7 @@ contains
             wenoz = .false.
             teno = .false.
             wenoz_q = dflt_real
+            recon_type = WENO_TYPE
         #:endif
 
         chem_params%diffusion = .false.

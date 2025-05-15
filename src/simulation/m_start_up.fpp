@@ -180,7 +180,8 @@ contains
             bubbles_lagrange, lag_params, &
             rkck_adap_dt, rkck_tolerance, &
             hyperelasticity, R0ref, num_bc_patches, Bx0, powell, &
-            cont_damage, tau_star, cont_damage_s, alpha_bar
+            cont_damage, tau_star, cont_damage_s, alpha_bar, &
+            recon_type
 
         ! Checking that an input file has been provided by the user. If it
         ! has, then the input file is read in, otherwise, simulation exits.
