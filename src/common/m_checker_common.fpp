@@ -47,10 +47,10 @@ contains
         ! Run by all three stages
         call s_check_inputs_simulation_domain
         call s_check_inputs_model_eqns_and_num_fluids
-!        if (recon_type == WENO_TYPE) then 
+!        if (recon_type == WENO_TYPE) then
 !            call s_check_inputs_weno
 !        elseif (recon_type == MUSCL_TYPE) then
-            ! TODO
+        ! TODO
 !        end if
         call s_check_inputs_bc
         call s_check_inputs_stiffened_eos

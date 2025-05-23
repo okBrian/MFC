@@ -299,6 +299,7 @@ SIMULATION.update({
     'cont_damage_s': ParamType.REAL,
     'alpha_bar': ParamType.REAL,
     'recon_type': ParamType.INT,
+    'muscl_order': ParamType.INT,
 })
 
 for var in [ 'heatTransfer_model', 'massTransfer_model', 'pressure_corrector',
