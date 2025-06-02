@@ -1,7 +1,6 @@
 #:include 'macros.fpp'
 module m_muscl
 
-    ! Dependencies =============================================================
     use m_derived_types        !< Definitions of the derived types
 
     use m_global_parameters    !< Definitions of the global parameters
@@ -15,7 +14,6 @@ module m_muscl
     use m_mpi_proxy
 
     use m_helper
-    ! ==========================================================================
 
     private; public :: s_initialize_muscl_module, &
  s_muscl, &
@@ -175,40 +173,40 @@ contains
                                     slopeR = v_rs_ws_${XYZ}$ (j, k, l, i) - &
                                              v_rs_ws_${XYZ}$ (j - 1, k, l, i)
 
-                                    slope = 0d0
+                                    slope = 0._wp
                                     if (muscl_lim == 1) then ! minmod
-                                        if (slopeL*slopeR > 0d0) then
+                                        if (slopeL*slopeR > 0._wp) then
                                             slope = min(abs(slopeL), abs(slopeR))
                                         end if
                                         if (slopeL < 0) slope = -slope
                                     elseif (muscl_lim == 2) then ! MC
-                                        if (slopeL*slopeR > 0d0) then
-                                            slope = min(2d0*abs(slopeL), 2d0*abs(slopeR))
-                                            slope = min(slope, 5d-1*(abs(slopeL + slopeR)))
+                                        if (slopeL*slopeR > 0._wp) then
+                                            slope = min(2._wp*abs(slopeL), 2._wp*abs(slopeR))
+                                            slope = min(slope, 5.0e-1_wp*(abs(slopeL + slopeR)))
                                         end if
                                         if (slopeL < 0) slope = -slope
                                     elseif (muscl_lim == 3) then ! Van Albada
                                         if (abs(slopeL) > 0 .and. abs(slopeR) > 0 .and. &
-                                            abs(slopeL + slopeR) > 0d0 .and. slopeL*slopeR > 0d0) then
-                                            slope = ((slopeL + slopeR)*slopeL*slopeR)/(slopeL**2d0 + slopeR**2d0)
+                                            abs(slopeL + slopeR) > 0._wp .and. slopeL*slopeR > 0._wp) then
+                                            slope = ((slopeL + slopeR)*slopeL*slopeR)/(slopeL**2._wp + slopeR**2._wp)
                                         end if
                                     elseif (muscl_lim == 4) then ! Van Leer
-                                        if (abs(slopeL + slopeR) > 0d0 .and. slopeL*slopeR > 0d0) then
+                                        if (abs(slopeL + slopeR) > 0._wp .and. slopeL*slopeR > 0._wp) then
                                             slope = 2*slopeL*slopeR/(slopeL + slopeR)
                                         end if
                                     elseif (muscl_lim == 5) then ! SUPERBEE
-                                        if (slopeL*slopeR > 0d0) then
-                                            slope = -1d0*min(-min(2d0*abs(slopeL), abs(slopeR)), -min(abs(slopeL), 2d0*abs(slopeR)))
+                                        if (slopeL*slopeR > 0._wp) then
+                                            slope = -1._wp*min(-min(2._wp*abs(slopeL), abs(slopeR)), -min(abs(slopeL), 2._wp*abs(slopeR)))
                                         end if
                                     end if
 
                                     ! reconstruct from left side
                                     vL_rs_vf_${XYZ}$ (j, k, l, i) = &
-                                        v_rs_ws_${XYZ}$ (j, k, l, i) - 5d-1*slope
+                                        v_rs_ws_${XYZ}$ (j, k, l, i) - 5.0e-1_wp*slope
 
                                     ! reconstruct from the right side
                                     vR_rs_vf_${XYZ}$ (j, k, l, i) = &
-                                        v_rs_ws_${XYZ}$ (j, k, l, i) + 5d-1*slope
+                                        v_rs_ws_${XYZ}$ (j, k, l, i) + 5.0e-1_wp*slope
 
                                 end do
                             end do
@@ -242,7 +240,7 @@ contains
 
         real(wp) :: iceps, aCL, aCR, aC, aTHINC, qmin, qmax, A, B, C, beta, sign, moncon
 
-        iceps = 1d-4; beta = 1.6d0
+        iceps = 1.0e-4_wp; beta = 1.6_wp
 
         is1 = is1_d
         is2 = is2_d
@@ -264,40 +262,40 @@ contains
 
                             moncon = (aCR - aC)*(aC - aCL)
 
-                            if (aC >= iceps .and. aC <= 1d0 - iceps .and. moncon > 1d-8) then ! Interface cell
+                            if (aC >= iceps .and. aC <= 1._wp - iceps .and. moncon > 1.0e-8_wp) then ! Interface cell
 
-                                if (aCR - aCL > 0d0) then
-                                    sign = 1d0
+                                if (aCR - aCL > 0._wp) then
+                                    sign = 1._wp
                                 else
-                                    sign = -1d0
+                                    sign = -1._wp
                                 end if
 
                                 qmin = min(aCR, aCL)
                                 qmax = max(aCR, aCL) - qmin
 
                                 C = (aC - qmin + sgm_eps)/(qmax + sgm_eps)
-                                B = exp(sign*beta*(2d0*C - 1d0))
-                                A = (B/cosh(beta) - 1d0)/tanh(beta)
+                                B = exp(sign*beta*(2._wp*C - 1._wp))
+                                A = (B/cosh(beta) - 1._wp)/tanh(beta)
 
                                 ! Left reconstruction
-                                aTHINC = qmin + 5d-1*qmax*(1d0 + sign*A)
+                                aTHINC = qmin + 5.0e-1_wp*qmax*(1._wp + sign*A)
                                 if (aTHINC < iceps) aTHINC = iceps
                                 if (aTHINC > 1 - iceps) aTHINC = 1 - iceps
                                 vL_rs_vf_${XYZ}$ (j, k, l, contxb) = vL_rs_vf_${XYZ}$ (j, k, l, contxb)/ &
                                                                      vL_rs_vf_${XYZ}$ (j, k, l, advxb)*aTHINC
                                 vL_rs_vf_${XYZ}$ (j, k, l, contxe) = vL_rs_vf_${XYZ}$ (j, k, l, contxe)/ &
-                                                                     (1d0 - vL_rs_vf_${XYZ}$ (j, k, l, advxb))*(1d0 - aTHINC)
+                                                                     (1._wp - vL_rs_vf_${XYZ}$ (j, k, l, advxb))*(1._wp - aTHINC)
                                 vL_rs_vf_${XYZ}$ (j, k, l, advxb) = aTHINC
                                 vL_rs_vf_${XYZ}$ (j, k, l, advxe) = 1 - aTHINC
 
                                 ! Right reconstruction
-                                aTHINC = qmin + 5d-1*qmax*(1d0 + sign*(tanh(beta) + A)/(1d0 + A*tanh(beta)))
+                                aTHINC = qmin + 5.0e-1_wp*qmax*(1._wp + sign*(tanh(beta) + A)/(1._wp + A*tanh(beta)))
                                 if (aTHINC < iceps) aTHINC = iceps
                                 if (aTHINC > 1 - iceps) aTHINC = 1 - iceps
                                 vR_rs_vf_${XYZ}$ (j, k, l, contxb) = vL_rs_vf_${XYZ}$ (j, k, l, contxb)/ &
                                                                      vL_rs_vf_${XYZ}$ (j, k, l, advxb)*aTHINC
                                 vR_rs_vf_${XYZ}$ (j, k, l, contxe) = vL_rs_vf_${XYZ}$ (j, k, l, contxe)/ &
-                                                                     (1d0 - vL_rs_vf_${XYZ}$ (j, k, l, advxb))*(1d0 - aTHINC)
+                                                                     (1._wp - vL_rs_vf_${XYZ}$ (j, k, l, advxb))*(1._wp - aTHINC)
                                 vR_rs_vf_${XYZ}$ (j, k, l, advxb) = aTHINC
                                 vR_rs_vf_${XYZ}$ (j, k, l, advxe) = 1 - aTHINC
 
@@ -344,7 +342,7 @@ contains
             !$acc end parallel loop
         end if
 
-        ! Reshaping/Projecting onto Characteristic Fields in y-direction ===
+        ! Reshaping/Projecting onto Characteristic Fields in y-direction
         if (n == 0) return
 
         if (muscl_dir == 2) then
@@ -385,7 +383,7 @@ contains
 #endif
         end if
 
-        ! Reshaping/Projecting onto Characteristic Fields in z-direction ===
+        ! Reshaping/Projecting onto Characteristic Fields in z-direction
         if (p == 0) return
         if (muscl_dir == 3) then
 #if MFC_cuTENSOR
@@ -415,7 +413,7 @@ contains
 #endif
         end if
 
-    end subroutine s_initialize_muscl ! -------------------------------------
+    end subroutine s_initialize_muscl
 
     subroutine s_finalize_muscl_module()
 

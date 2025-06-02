@@ -91,7 +91,7 @@ contains
             & 'bc_z%grcbc_in', 'bc_z%grcbc_out', 'bc_z%grcbc_vel_out',          &
             & 'cfl_adap_dt', 'cfl_const_dt', 'cfl_dt', 'surface_tension',        &
             & 'viscous', 'shear_stress', 'bulk_stress', 'bubbles_lagrange',     &
-            & 'hyperelasticity', 'bc_io', 'powell', 'cont_damage' ]
+            & 'hyperelasticity', 'bc_io', 'powell', 'cont_damage', 'int_comp' ]
             call MPI_BCAST(${VAR}$, 1, MPI_LOGICAL, 0, MPI_COMM_WORLD, ierr)
         #:endfor
 
@@ -235,6 +235,15 @@ contains
 
         integer :: i, j !< Generic loop iterators
 
+        ! Use WENO Order, or MUSCL Order
+        integer :: recon_order
+
+        if (recon_type == WENO_TYPE) then
+            recon_order = weno_order
+        else
+            recon_order = muscl_order
+        end if
+
         if (num_procs == 1 .and. parallel_io) then
             do i = 1, num_dims
                 start_idx(i) = 0
@@ -270,7 +279,7 @@ contains
 
                         if (mod(num_procs, i) == 0 &
                             .and. &
-                            (m + 1)/i >= num_stcls_min*weno_order) then
+                            (m + 1)/i >= num_stcls_min*recon_order) then
 
                             tmp_num_procs_x = i
                             tmp_num_procs_y = num_procs/i
@@ -280,7 +289,7 @@ contains
                                 .and. &
                                 (n + 1)/tmp_num_procs_y &
                                 >= &
-                                num_stcls_min*weno_order) then
+                                num_stcls_min*recon_order) then
 
                                 num_procs_x = i
                                 num_procs_y = num_procs/i
@@ -316,13 +325,13 @@ contains
 
                         if (mod(num_procs, i) == 0 &
                             .and. &
-                            (m + 1)/i >= num_stcls_min*weno_order) then
+                            (m + 1)/i >= num_stcls_min*recon_order) then
 
                             do j = 1, num_procs/i
 
                                 if (mod(num_procs/i, j) == 0 &
                                     .and. &
-                                    (n + 1)/j >= num_stcls_min*weno_order) then
+                                    (n + 1)/j >= num_stcls_min*recon_order) then
 
                                     tmp_num_procs_x = i
                                     tmp_num_procs_y = j
@@ -335,7 +344,7 @@ contains
                                         .and. &
                                         (p + 1)/tmp_num_procs_z &
                                         >= &
-                                        num_stcls_min*weno_order) &
+                                        num_stcls_min*recon_order) &
                                         then
 
                                         num_procs_x = i
@@ -364,7 +373,7 @@ contains
                 if (proc_rank == 0 .and. ierr == -1) then
                     call s_mpi_abort('Unsupported combination of values '// &
                                      'of num_procs, m, n, p and '// &
-                                     'weno_order. Exiting.')
+                                     'recon_order. Exiting.')
                 end if
 
                 ! Creating new communicator using the Cartesian topology
@@ -436,7 +445,7 @@ contains
 
                     if (mod(num_procs, i) == 0 &
                         .and. &
-                        (m + 1)/i >= num_stcls_min*weno_order) then
+                        (m + 1)/i >= num_stcls_min*recon_order) then
 
                         tmp_num_procs_x = i
                         tmp_num_procs_y = num_procs/i
@@ -446,7 +455,7 @@ contains
                             .and. &
                             (n + 1)/tmp_num_procs_y &
                             >= &
-                            num_stcls_min*weno_order) then
+                            num_stcls_min*recon_order) then
 
                             num_procs_x = i
                             num_procs_y = num_procs/i
@@ -465,7 +474,7 @@ contains
                 if (proc_rank == 0 .and. ierr == -1) then
                     call s_mpi_abort('Unsupported combination of values '// &
                                      'of num_procs, m, n and '// &
-                                     'weno_order. Exiting.')
+                                     'recon_order. Exiting.')
                 end if
 
                 ! Creating new communicator using the Cartesian topology

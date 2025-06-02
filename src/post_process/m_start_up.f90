@@ -84,7 +84,8 @@ contains
             relax_model, cf_wrt, sigma, adv_n, ib, num_ibs, &
             cfl_adap_dt, cfl_const_dt, t_save, t_stop, n_start, &
             cfl_target, surface_tension, bubbles_lagrange, &
-            sim_data, hyperelasticity, Bx0, relativity, cont_damage
+            sim_data, hyperelasticity, Bx0, relativity, cont_damage, &
+            recon_type, muscl_order, muscl_lim
 
         ! Inquiring the status of the post_process.inp file
         file_loc = 'post_process.inp'
