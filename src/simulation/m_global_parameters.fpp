@@ -161,6 +161,8 @@ module m_global_parameters
     logical :: hypoelasticity  !< hypoelasticity modeling
     logical :: hyperelasticity !< hyperelasticity modeling
     logical :: int_comp        !< THINC interface compression
+    real(wp) :: ic_eps         !< THINC Epsilon to compress on surface cells
+    real(wp) :: ic_beta        !< THINC Sharpness Parameter
     integer :: hyper_model     !< hyperelasticity solver algorithm
     logical :: elasticity      !< elasticity modeling, true for hyper or hypo
     logical, parameter :: chemistry = .${chemistry}$. !< Chemistry modeling
@@ -585,6 +587,8 @@ contains
         hypoelasticity = .false.
         hyperelasticity = .false.
         int_comp = .false.
+        ic_eps = dflt_ic_eps
+        ic_beta = dflt_ic_beta
         elasticity = .false.
         hyper_model = dflt_int
         b_size = dflt_int
@@ -818,7 +822,8 @@ contains
                     weno_num_stencils = weno_polyn
                 end if
             elseif (recon_type == MUSCL_TYPE) then
-                muscl_polyn = muscl_order
+                muscl_polyn = muscl_order - 1
+                print *, "muscl polyn", muscl_polyn
             end if
             $:GPU_UPDATE(device='[weno_polyn, muscl_polyn]')
             $:GPU_UPDATE(device='[weno_num_stencils]')
