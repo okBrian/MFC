@@ -210,8 +210,12 @@ class Case:
             # Throw error if wenoz_q is required but not set
             return f"""\
 #:set MFC_CASE_OPTIMIZATION = {ARG("case_optimization")}
+#:set recon_type            = {int(self.params["recon_type"])}
 #:set weno_order            = {weno_order}
 #:set weno_polyn            = {weno_polyn}
+#:set muscl_order           = {int(self.params["muscl_order"])}
+#:set muscl_polyn           = {int(self.params["muscl_order"])}
+#:set muscl_lim             = {int(self.params["muscl_lim"])}
 #:set weno_num_stencils     = {weno_num_stencils}
 #:set nb                    = {int(self.params.get("nb", 1))}
 #:set num_dims              = {num_dims}
