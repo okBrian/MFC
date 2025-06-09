@@ -220,10 +220,11 @@ contains
 
     !> Check constraints regarding MUSCL order
         !! Called by s_check_inputs_common for all three stages
-    subroutine s_check_inputs_muscl
+    impure subroutine s_check_inputs_muscl
         @:PROHIBIT(all(muscl_order /= (/1, 2/)), "muscl_order must be 1, or 2")
-
-        !@:PROHIBIT(
+        @:PROHIBIT(m + 1 < muscl_order, "m must be at least muscl_order - 1")
+        @:PROHIBIT(n > 0 .and. n + 1 < muscl_order, "n must be at least muscl_order - 1")
+        @:PROHIBIT(p > 0 .and. p + 1 < muscl_order, "p must be at least muscl_order - 1")
     end subroutine s_check_inputs_muscl
 
     !> Checks constraints on the boundary conditions in the x-direction.

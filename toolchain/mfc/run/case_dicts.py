@@ -62,7 +62,6 @@ COMMON = {
     'cont_damage': ParamType.LOG,
     'recon_type': ParamType.INT,
     'muscl_order': ParamType.INT,
-    'muscl_lim': ParamType.INT,
 }
 
 PRE_PROCESS = COMMON.copy()
@@ -299,7 +298,10 @@ SIMULATION.update({
     'tau_star': ParamType.REAL,
     'cont_damage_s': ParamType.REAL,
     'alpha_bar': ParamType.REAL,
+    'muscl_lim': ParamType.INT,
     'int_comp': ParamType.LOG,
+    'THINC_iceps': ParamType.REAL,
+    'THINC_beta': ParamType.REAL,
 })
 
 for var in [ 'heatTransfer_model', 'massTransfer_model', 'pressure_corrector',

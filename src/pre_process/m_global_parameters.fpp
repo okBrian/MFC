@@ -88,7 +88,6 @@ module m_global_parameters
     integer :: muscl_polyn           !< Degree of the MUSCL polynomials (polyn)
     integer :: weno_order            !< Order of accuracy for the WENO reconstruction
     integer :: muscl_order           !< Order of accuracy for the MUSCL reconstruction
-    integer :: muscl_lim             !< MUSCL Scheme Slope limiter
     logical :: hypoelasticity        !< activate hypoelasticity
     logical :: hyperelasticity       !< activate hyperelasticity
     logical :: elasticity            !< elasticity modeling, true for hyper or hypo
@@ -343,7 +342,6 @@ contains
         recon_type = WENO_TYPE
         weno_order = dflt_int
         muscl_order = dflt_int
-        muscl_lim = dflt_int
 
         hypoelasticity = .false.
         hyperelasticity = .false.

@@ -105,7 +105,6 @@ module m_global_parameters
     integer :: recon_type      !< Which type of reconstruction to use
     integer :: weno_order      !< Order of accuracy for the WENO reconstruction
     integer :: muscl_order     !< Order of accuracy for the MUSCL reconstruction
-    integer :: muscl_lim       !< MUSCL Scheme Slope Limiter
     logical :: mixture_err     !< Mixture error limiter
     logical :: alt_soundspeed  !< Alternate sound speed
     logical :: mhd             !< Magnetohydrodynamics
@@ -357,7 +356,6 @@ contains
         recon_type = WENO_TYPE
         weno_order = dflt_int
         muscl_order = dflt_int
-        muscl_lim = dflt_int
         mixture_err = .false.
         alt_soundspeed = .false.
         relax = .false.

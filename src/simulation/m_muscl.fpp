@@ -113,8 +113,7 @@ contains
         !$acc update device(is1, is2, is3)
 
         if (muscl_order /= 1) then
-            call s_initialize_muscl(v_vf, &
-                                    norm_dir, muscl_dir)
+            call s_initialize_muscl(v_vf, muscl_dir)
         end if
 
         if (muscl_order == 1) then
@@ -181,7 +180,7 @@ contains
                                     elseif (muscl_lim == 2) then ! MC
                                         if (slopeL*slopeR > 0._wp) then
                                             slope = min(2._wp*abs(slopeL), 2._wp*abs(slopeR))
-                                            slope = min(slope, 5.0e-1_wp*(abs(slopeL + slopeR)))
+                                            slope = min(slope, 5e-1_wp*(abs(slopeL + slopeR)))
                                         end if
                                         if (slopeL < 0) slope = -slope
                                     elseif (muscl_lim == 3) then ! Van Albada
@@ -201,11 +200,11 @@ contains
 
                                     ! reconstruct from left side
                                     vL_rs_vf_${XYZ}$ (j, k, l, i) = &
-                                        v_rs_ws_${XYZ}$ (j, k, l, i) - 5.0e-1_wp*slope
+                                        v_rs_ws_${XYZ}$ (j, k, l, i) - 5e-1_wp*slope
 
                                     ! reconstruct from the right side
                                     vR_rs_vf_${XYZ}$ (j, k, l, i) = &
-                                        v_rs_ws_${XYZ}$ (j, k, l, i) + 5.0e-1_wp*slope
+                                        v_rs_ws_${XYZ}$ (j, k, l, i) + 5e-1_wp*slope
 
                                 end do
                             end do
@@ -227,18 +226,16 @@ contains
                                        muscl_dir, &
                                        is1_d, is2_d, is3_d)
 
-        real(wp), dimension(idwbuff(1)%beg:, idwbuff(2)%beg:, idwbuff(3)%beg:, 1:), intent(INOUT) :: &
+        real(wp), dimension(idwbuff(1)%beg:, idwbuff(2)%beg:, idwbuff(3)%beg:, 1:), intent(inout) :: &
             vL_rs_vf_x, vL_rs_vf_y, &
             vL_rs_vf_z, vR_rs_vf_x, &
             vR_rs_vf_y, vR_rs_vf_z
-        integer, intent(IN) :: muscl_dir
-        type(int_bounds_info), intent(IN) :: is1_d, is2_d, is3_d
+        integer, intent(in) :: muscl_dir
+        type(int_bounds_info), intent(in) :: is1_d, is2_d, is3_d
 
         integer :: j, k, l, i, q
 
-        real(wp) :: iceps, aCL, aCR, aC, aTHINC, qmin, qmax, A, B, C, beta, sign, moncon
-
-        iceps = 1.0e-4_wp; beta = 1.6_wp
+        real(wp) :: aCL, aCR, aC, aTHINC, qmin, qmax, A, B, C, sign, moncon
 
         is1 = is1_d
         is2 = is2_d
@@ -260,7 +257,7 @@ contains
 
                             moncon = (aCR - aC)*(aC - aCL)
 
-                            if (aC >= iceps .and. aC <= 1._wp - iceps .and. moncon > 1.0e-8_wp) then ! Interface cell
+                            if (aC >= THINC_iceps .and. aC <= 1._wp - THINC_iceps .and. moncon > moncon_cutoff) then ! Interface cell
 
                                 if (aCR - aCL > 0._wp) then
                                     sign = 1._wp
@@ -272,13 +269,13 @@ contains
                                 qmax = max(aCR, aCL) - qmin
 
                                 C = (aC - qmin + sgm_eps)/(qmax + sgm_eps)
-                                B = exp(sign*beta*(2._wp*C - 1._wp))
-                                A = (B/cosh(beta) - 1._wp)/tanh(beta)
+                                B = exp(sign*THINC_beta*(2._wp*C - 1._wp))
+                                A = (B/cosh(THINC_beta) - 1._wp)/tanh(THINC_beta)
 
                                 ! Left reconstruction
-                                aTHINC = qmin + 5.0e-1_wp*qmax*(1._wp + sign*A)
-                                if (aTHINC < iceps) aTHINC = iceps
-                                if (aTHINC > 1 - iceps) aTHINC = 1 - iceps
+                                aTHINC = qmin + 5e-1_wp*qmax*(1._wp + sign*A)
+                                if (aTHINC < THINC_iceps) aTHINC = THINC_iceps
+                                if (aTHINC > 1 - THINC_iceps) aTHINC = 1 - THINC_iceps
                                 vL_rs_vf_${XYZ}$ (j, k, l, contxb) = vL_rs_vf_${XYZ}$ (j, k, l, contxb)/ &
                                                                      vL_rs_vf_${XYZ}$ (j, k, l, advxb)*aTHINC
                                 vL_rs_vf_${XYZ}$ (j, k, l, contxe) = vL_rs_vf_${XYZ}$ (j, k, l, contxe)/ &
@@ -287,9 +284,9 @@ contains
                                 vL_rs_vf_${XYZ}$ (j, k, l, advxe) = 1 - aTHINC
 
                                 ! Right reconstruction
-                                aTHINC = qmin + 5.0e-1_wp*qmax*(1._wp + sign*(tanh(beta) + A)/(1._wp + A*tanh(beta)))
-                                if (aTHINC < iceps) aTHINC = iceps
-                                if (aTHINC > 1 - iceps) aTHINC = 1 - iceps
+                                aTHINC = qmin + 5e-1_wp*qmax*(1._wp + sign*(tanh(THINC_beta) + A)/(1._wp + A*tanh(THINC_beta)))
+                                if (aTHINC < THINC_iceps) aTHINC = THINC_iceps
+                                if (aTHINC > 1 - THINC_iceps) aTHINC = 1 - THINC_iceps
                                 vR_rs_vf_${XYZ}$ (j, k, l, contxb) = vL_rs_vf_${XYZ}$ (j, k, l, contxb)/ &
                                                                      vL_rs_vf_${XYZ}$ (j, k, l, advxb)*aTHINC
                                 vR_rs_vf_${XYZ}$ (j, k, l, contxe) = vL_rs_vf_${XYZ}$ (j, k, l, contxe)/ &
@@ -309,9 +306,8 @@ contains
 
     subroutine s_initialize_muscl(v_vf, muscl_dir)
 
-        type(scalar_field), dimension(:), intent(IN) :: v_vf
-
-        integer, intent(IN) :: muscl_dir
+        type(scalar_field), dimension(:), intent(in) :: v_vf
+        integer, intent(in) :: muscl_dir
 
         integer :: i, j, k, l, q !< Generic loop iterators
 

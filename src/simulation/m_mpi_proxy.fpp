@@ -130,7 +130,8 @@ contains
             & 'x_domain%beg', 'x_domain%end', 'y_domain%beg', 'y_domain%end',    &
             & 'z_domain%beg', 'z_domain%end', 'x_a', 'x_b', 'y_a', 'y_b', 'z_a', &
             & 'z_b', 't_stop', 't_save', 'cfl_target', 'Bx0',  &
-            & 'tau_star', 'cont_damage_s', 'alpha_bar', 'adap_dt_tol' ]
+            & 'tau_star', 'cont_damage_s', 'alpha_bar', 'adap_dt_tol', &
+            & 'THINC_iceps', 'THINC_beta' ]
             call MPI_BCAST(${VAR}$, 1, mpi_p, 0, MPI_COMM_WORLD, ierr)
         #:endfor
 
