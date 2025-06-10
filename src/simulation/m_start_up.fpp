@@ -185,7 +185,7 @@ contains
             bubbles_lagrange, lag_params, &
             hyperelasticity, R0ref, num_bc_patches, Bx0, powell, &
             cont_damage, tau_star, cont_damage_s, alpha_bar, int_comp, &
-            THINC_iceps, THINC_beta
+            ic_eps, ic_beta 
         ! Checking that an input file has been provided by the user. If it
         ! has, then the input file is read in, otherwise, simulation exits.
         inquire (FILE=trim(file_path), EXIST=file_exist)

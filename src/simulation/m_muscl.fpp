@@ -257,7 +257,7 @@ contains
 
                             moncon = (aCR - aC)*(aC - aCL)
 
-                            if (aC >= THINC_iceps .and. aC <= 1._wp - THINC_iceps .and. moncon > moncon_cutoff) then ! Interface cell
+                            if (aC >= ic_eps .and. aC <= 1._wp - ic_eps .and. moncon > moncon_cutoff) then ! Interface cell
 
                                 if (aCR - aCL > 0._wp) then
                                     sign = 1._wp
@@ -269,13 +269,13 @@ contains
                                 qmax = max(aCR, aCL) - qmin
 
                                 C = (aC - qmin + sgm_eps)/(qmax + sgm_eps)
-                                B = exp(sign*THINC_beta*(2._wp*C - 1._wp))
-                                A = (B/cosh(THINC_beta) - 1._wp)/tanh(THINC_beta)
+                                B = exp(sign*ic_beta*(2._wp*C - 1._wp))
+                                A = (B/cosh(ic_beta) - 1._wp)/tanh(ic_beta)
 
                                 ! Left reconstruction
                                 aTHINC = qmin + 5e-1_wp*qmax*(1._wp + sign*A)
-                                if (aTHINC < THINC_iceps) aTHINC = THINC_iceps
-                                if (aTHINC > 1 - THINC_iceps) aTHINC = 1 - THINC_iceps
+                                if (aTHINC < ic_eps) aTHINC = ic_eps
+                                if (aTHINC > 1 - ic_eps) aTHINC = 1 - ic_eps
                                 vL_rs_vf_${XYZ}$ (j, k, l, contxb) = vL_rs_vf_${XYZ}$ (j, k, l, contxb)/ &
                                                                      vL_rs_vf_${XYZ}$ (j, k, l, advxb)*aTHINC
                                 vL_rs_vf_${XYZ}$ (j, k, l, contxe) = vL_rs_vf_${XYZ}$ (j, k, l, contxe)/ &
@@ -284,9 +284,9 @@ contains
                                 vL_rs_vf_${XYZ}$ (j, k, l, advxe) = 1 - aTHINC
 
                                 ! Right reconstruction
-                                aTHINC = qmin + 5e-1_wp*qmax*(1._wp + sign*(tanh(THINC_beta) + A)/(1._wp + A*tanh(THINC_beta)))
-                                if (aTHINC < THINC_iceps) aTHINC = THINC_iceps
-                                if (aTHINC > 1 - THINC_iceps) aTHINC = 1 - THINC_iceps
+                                aTHINC = qmin + 5e-1_wp*qmax*(1._wp + sign*(tanh(ic_beta) + A)/(1._wp + A*tanh(ic_beta)))
+                                if (aTHINC < ic_eps) aTHINC = ic_eps
+                                if (aTHINC > 1 - ic_eps) aTHINC = 1 - ic_eps
                                 vR_rs_vf_${XYZ}$ (j, k, l, contxb) = vL_rs_vf_${XYZ}$ (j, k, l, contxb)/ &
                                                                      vL_rs_vf_${XYZ}$ (j, k, l, advxb)*aTHINC
                                 vR_rs_vf_${XYZ}$ (j, k, l, contxe) = vL_rs_vf_${XYZ}$ (j, k, l, contxe)/ &

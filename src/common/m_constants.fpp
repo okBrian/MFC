@@ -37,8 +37,8 @@ module m_constants
     integer, parameter :: MUSCL_TYPE = 2 !< Using MUSCL for reconstruction type
 
     ! Interface Compression
-    real(wp), parameter :: dflt_THINC_iceps = 1e-4_wp !< Ensure compression is only applied to surface cells in THINC
-    real(wp), parameter :: dflt_THINC_beta = 1.6_wp !< Sharpness parameter's default value used in THINC
+    real(wp), parameter :: dflt_ic_eps = 1e-4_wp !< Ensure compression is only applied to surface cells in THINC
+    real(wp), parameter :: dflt_ic_beta = 1.6_wp !< Sharpness parameter's default value used in THINC
     integer, parameter :: moncon_cutoff = 1e-8_wp !< Monotonicity constraint's limiter to prevent extremas in THINC
 
     ! Chemistry

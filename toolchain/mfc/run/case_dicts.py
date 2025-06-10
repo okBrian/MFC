@@ -300,8 +300,8 @@ SIMULATION.update({
     'alpha_bar': ParamType.REAL,
     'muscl_lim': ParamType.INT,
     'int_comp': ParamType.LOG,
-    'THINC_iceps': ParamType.REAL,
-    'THINC_beta': ParamType.REAL,
+    'ic_eps': ParamType.REAL,
+    'ic_beta': ParamType.REAL,
 })
 
 for var in [ 'heatTransfer_model', 'massTransfer_model', 'pressure_corrector',

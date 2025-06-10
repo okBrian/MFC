@@ -35,6 +35,7 @@ print(
             "time_stepper": 3,
             "recon_type": 2,
             "muscl_order": 2,
+            "muscl_lim": 2,
             #            "weno_order": 5,
             #            "weno_eps": 1.0e-16,
             #            "weno_Re_flux": "F",
