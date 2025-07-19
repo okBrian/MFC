@@ -1,24 +1,24 @@
-This file was created on 2025-07-06 23:00:35.961004.
+This file was created on 2025-07-19 14:08:08.887970.
 
 mfc.sh:
 
-    Invocation: test -j 8 --generate -o muscl_order=2
+    Invocation: test -j 8 -o muscl_order=2 --generate --no-gpu
     Lock:       mpi=Yes & gpu=No & debug=No & gcov=No & unified=No & single=No
-    Git:        1117c7926b10a92920fd501899761823dd2cf9db on muscl (dirty)
+    Git:        1660f248696d29ea34a38d74bec2b2f3edaea8e9 on muscl (dirty)
 
-post_process:
+syscheck:
 
     CMake Configuration:
     
         CMake v4.0.3-dirty on bok
     
-        C       : NVHPC v24.5.1 (/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/compilers/bin/nvc)
-        Fortran : NVHPC v24.5.1 (/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/compilers/bin/nvfortran)
+        C       : GNU v15.1.1 (/usr/bin/cc)
+        Fortran : GNU v15.1.1 (/usr/bin/gfortran)
     
         PRE_PROCESS   : OFF
         SIMULATION    : OFF
-        POST_PROCESS  : ON
-        SYSCHECK      : OFF
+        POST_PROCESS  : OFF
+        SYSCHECK      : ON
         DOCUMENTATION : OFF
         ALL           : OFF
     
@@ -32,9 +32,9 @@ post_process:
     
     Configuration Environment:
     
-        CC       : /opt/nvidia/hpc_sdk/Linux_x86_64/24.5/compilers/bin/nvc
-        CXX      : /opt/nvidia/hpc_sdk/Linux_x86_64/24.5/compilers/bin/nvc++
-        FC       : /opt/nvidia/hpc_sdk/Linux_x86_64/24.5/compilers/bin/nvfortran
+        CC       : 
+        CXX      : 
+        FC       : 
         OMPI_CC  : 
         OMPI_CXX : 
         OMPI_FC  : 
@@ -72,7 +72,7 @@ pre_process:
         OMPI_CXX : 
         OMPI_FC  : 
 
-syscheck:
+post_process:
 
     CMake Configuration:
     
@@ -83,8 +83,8 @@ syscheck:
     
         PRE_PROCESS   : OFF
         SIMULATION    : OFF
-        POST_PROCESS  : OFF
-        SYSCHECK      : ON
+        POST_PROCESS  : ON
+        SYSCHECK      : OFF
         DOCUMENTATION : OFF
         ALL           : OFF
     
@@ -156,7 +156,7 @@ CPU:
     Core(s) per socket:                      4
     Socket(s):                               1
     Stepping:                                1
-    CPU(s) scaling MHz:                      69%
+    CPU(s) scaling MHz:                      36%
     CPU max MHz:                             4700.0000
     CPU min MHz:                             400.0000
     BogoMIPS:                                5606.40
